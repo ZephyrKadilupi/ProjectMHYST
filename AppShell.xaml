@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="ProjectMHYST.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ProjectMHYST"
+       
+       
+       xmlns:AlohaKit.Animations="clr-namespace:AlohaKit.Animations;assembly=AlohaKit.Animations"
+       
+       xmlns:startpages="clr-namespace:ProjectMHYST.Pages.Start"
+       xmlns:forms="clr-namespace:ProjectMHYST.Pages.Forms"
+       xmlns:subjects="clr-namespace:ProjectMHYST.Pages.Subjects"
+       
+       Shell.FlyoutBehavior="Disabled"
+       Title="ProjectMHYST">
+
+    <ShellContent Title="Home"
+                  ContentTemplate="{DataTemplate startpages:StartPage}"
+                  Route="MainPage" />
+
+    <ShellContent Title="LoginPage"
+                  ContentTemplate="{DataTemplate forms:LoginPage}"
+                  Route="MainPage" />
+
+    <ShellContent Title="PrincipalSubjectListPage"
+                  ContentTemplate="{DataTemplate subjects:PrincipalSubjectListPage}"
+                  Route="MainPage" />
+</Shell>

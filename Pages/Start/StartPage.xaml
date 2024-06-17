@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:alohakit="clr-namespace:AlohaKit.Animations;assembly=AlohaKit.Animations"
+             x:Class="ProjectMHYST.Pages.Start.StartPage"
+             Title="StartPage"
+             NavigationPage.HasNavigationBar="False"
+             Appearing="triggerStartAnimations">
+
+    <!--
+    <ContentPage.Resources>
+        <alohakit:FadeToAnimation x:Key="imgMhyst_FadeToAnimation"
+                                  Target="{x:Reference imgMhyst}"
+                                  Duration="2000"
+                                  Opacity="1" />
+
+        <alohakit:FadeToAnimation x:Key="lbMhyst_FadeToAnimation"
+                                  Target="{x:Reference lbMhyst}"
+                                  Duration="2000"
+                                  Opacity="1" />
+    </ContentPage.Resources>
+    -->
+
+    <AbsoluteLayout BackgroundColor="#000"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+        
+        <Image x:Name="imgTeam" 
+               Source="team_logo_w.svg"
+               WidthRequest="200"
+               HeightRequest="200"
+               Opacity="0"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5, 0.45, Autosize, Autosize"></Image>
+        
+        <Image x:Name="imgMhyst"
+               Source="mhyst_w.svg"
+               WidthRequest="150"
+               HeightRequest="150"
+               Opacity="0"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5, 0.4, Autosize, Autosize">
+        </Image>
+
+        <Label x:Name="lbMhyst"
+               Text="MHYST"
+               TextColor="#ffffff"
+               FontSize="18"
+               FontFamily="MontserratAlternatesMedium"
+               Opacity="0"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5, 0.53, Autosize, Autosize"></Label>
+
+        <Button x:Name="btnLogin"
+                Text="Iniciar Sesión"
+                FontFamily="LexendMedium"
+                FontSize="16"
+                TextTransform="Uppercase"
+                TextColor="#000"
+                BackgroundColor="#fff"
+                WidthRequest="180"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.5, 0.7, Autosize, Autosize"
+                Clicked="goToLoginPage"></Button>
+
+        <Button x:Name="btnSignUp" 
+                Text="Registrarse"
+                FontFamily="LexendMedium"
+                FontSize="16"
+                TextTransform="Uppercase"
+                TextColor="#000"
+                BackgroundColor="#fff"
+                WidthRequest="180"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.5, 0.78, Autosize, Autosize"
+                Clicked="goToSignUpPage"></Button>
+    </AbsoluteLayout>
+</ContentPage>

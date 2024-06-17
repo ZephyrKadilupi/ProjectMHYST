@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMHYST.Pages.Subjects.PrincipalSubjectListPage"
+             Title="PrincipalSubjectListPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- Sección: Usuario -->
+        <VerticalStackLayout BackgroundColor="#000000"
+                             Padding="0, 0, 0, 10"
+                             Grid.Row="0"
+                             Grid.Column="0">
+            <Ellipse Fill="#ffffff"
+                     Stroke="#404040"
+                     StrokeThickness="4"
+                     WidthRequest="75"
+                     HeightRequest="75"
+                     Margin="0, 10, 0, 0"
+                     HorizontalOptions="Center" />
+
+            <Label x:Name="lbUsername"
+                   Text="Usuario"
+                   TextColor="#eeeeee"
+                   TextTransform="Uppercase"
+                   FontFamily="LexendMedium"
+                   FontSize="12"
+                   HorizontalTextAlignment="Center"
+                   Margin="0, 5, 0, 0" />
+
+            <BoxView BackgroundColor="#20ffffff"
+                     HeightRequest="2"
+                     HorizontalOptions="FillAndExpand"
+                     Margin="10, 10, 10, 0"></BoxView>
+        </VerticalStackLayout>
+
+        <!-- Sección: Temas -->
+        <ScrollView x:Name="UI_SideBar"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="#000000"
+                    Grid.Row="1"
+                    Grid.Column="0">
+            <VerticalStackLayout Background="#F0101010"
+                                 Padding="0, 10, 0, 0"
+                                 Margin="5, 0, 5, 0">
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+
+                <Ellipse Fill="#404040"
+                         Stroke="#101010"
+                         StrokeThickness="4"
+                         WidthRequest="75"
+                         HeightRequest="75"
+                         Margin="0, 0, 0, 10"
+                         HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Sección: Final Temas -->
+        <VerticalStackLayout BackgroundColor="#000000"
+                             Padding="0, 0, 0, 10"
+                             Grid.Row="2"
+                             Grid.Column="0">
+
+            <BoxView BackgroundColor="#20ffffff"
+                     HeightRequest="2"
+                     HorizontalOptions="FillAndExpand"
+                     Margin="10, 10, 10, 0"></BoxView>
+        </VerticalStackLayout>
+
+        <!-- Sección: Tema -->
+        <FlexLayout x:Name="sectionWelcome"
+                    BackgroundColor="#101010"
+                    JustifyContent="Center"
+                    AlignItems="Center"
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Grid.Column="1">
+            <VerticalStackLayout>
+                <ImageButton Source="cat_normal_w.svg"
+                       WidthRequest="150"
+                       HeightRequest="150"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Margin="0, 0, 0, 10"
+                       Clicked="SpecialTouchedDialogue"></ImageButton>
+
+                <Label x:Name="lbDialogue" Text="—¡Has llegado! Me temo que tienes mucho por aprender, ¿o no?"
+                       TextColor="#ffffff"
+                       FontSize="14"
+                       FontFamily="OverpassSemibold"
+                       WidthRequest="200"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Padding="5, 0, 5, 0"
+                       Margin="10, 0, 0, 0"></Label>
+
+                <Button x:Name="btnContinueDialogue"
+                        Text="Click Para Continuar"
+                        TextTransform="Uppercase"
+                        TextColor="#ffffff"
+                        FontSize="11"
+                        FontFamily="LexendLight"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="End"
+                        Clicked="NextDialogue"></Button>
+            </VerticalStackLayout>
+        </FlexLayout>
+    </Grid>
+</ContentPage>

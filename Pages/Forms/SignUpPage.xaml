@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMHYST.Pages.Forms.SignUpPage"
+             Title="SignUpPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ScrollView BackgroundColor="#101010">
+        <VerticalStackLayout>
+
+            <!-- Sección que contiene el Logo y el Nombre -->
+            <FlexLayout JustifyContent="Center"
+                        Margin="0, 40, 0, 0">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Image Source="mhyst_w.svg"
+                           WidthRequest="60"
+                           HeightRequest="60"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"></Image>
+
+                    <Label Text="MHYST"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           FontFamily="MontserratAlternatesMedium"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Margin="10, 0, 0, 0"></Label>
+                </HorizontalStackLayout>
+            </FlexLayout>
+
+            <!-- Título de la Página: Registro -->
+            <Label Text="Registro"
+                   FontSize="24"
+                   FontFamily="LexendLight"
+                   TextTransform="Uppercase"
+                   TextColor="#ffffff"
+                   HorizontalOptions="Center"
+                   Margin="0, 30, 0, 0"></Label>
+
+            <!-- Instrucciones -->
+            <Label Text="Por favor, llene los siguientes recuadros."
+                   FontSize="16"
+                   FontFamily="OverpassRegular"
+                   TextColor="#FFFFFF"
+                   WidthRequest="300"
+                   HorizontalOptions="Center"
+                   Margin="0, 30, 0, 0"></Label>
+
+            <!-- Sección del Primer Input: Nombre -->
+            <VerticalStackLayout x:Name="vslName"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center"
+                                 Margin="0, 20, 0, 0">
+                <Label Text="Nombre:"
+                       FontSize="16"
+                       FontFamily="OverpassSemibold"
+                       TextColor="#FFFFFF"></Label>
+
+                <Entry x:Name="entryName"
+                       WidthRequest="300"
+                       TextColor="#ffffff"
+                       FontFamily="OverpassRegular"
+                       FontSize="22"
+                       Placeholder="Nombre"
+                       Margin="-8, -12, 0, 0"
+                       TextChanged="updateEntryValues"></Entry>
+            </VerticalStackLayout>
+
+
+            <!-- Sección del Segundo Input: Usuario -->
+            <VerticalStackLayout x:Name="vslUser"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center"
+                                 Margin="0, 10, 0, 0">
+                <Label Text="Usuario:"
+                       FontSize="16"
+                       FontFamily="OverpassSemibold"
+                       TextColor="#FFFFFF"></Label>
+
+                <Entry x:Name="entryUser"
+                       WidthRequest="300"
+                       TextColor="#ffffff"
+                       FontFamily="OverpassRegular"
+                       FontSize="22"
+                       Placeholder="username123"
+                       Margin="-8, -12, 0, 0"
+                       TextChanged="updateEntryValues"></Entry>
+            </VerticalStackLayout>
+
+
+            <!-- Sección del Tercer Input: Email -->
+            <VerticalStackLayout x:Name="vslEmail"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center"
+                                 Margin="0, 10, 0, 0">
+                <Label Text="Correo Electrónico:"
+                       FontSize="16"
+                       FontFamily="OverpassSemibold"
+                       TextColor="#FFFFFF"></Label>
+
+                <Entry x:Name="entryEmail"
+                       WidthRequest="300"
+                       TextColor="#ffffff"
+                       FontFamily="OverpassRegular"
+                       FontSize="22"
+                       Placeholder="abc@gmail.com"
+                       Margin="-8, -12, 0, 0"
+                       TextChanged="updateEntryValues"></Entry>
+            </VerticalStackLayout>
+
+            <!-- Sección del Cuarto Input: Teléfono -->
+            <VerticalStackLayout x:Name="vslTel"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center"
+                                 Margin="0, 10, 0, 0">
+                <Label Text="Número de Teléfono:"
+                       FontSize="16"
+                       FontFamily="OverpassSemibold"
+                       TextColor="#FFFFFF"></Label>
+
+                <Entry x:Name="entryTel"
+                       WidthRequest="300"
+                       TextColor="#ffffff"
+                       FontFamily="OverpassRegular"
+                       FontSize="22"
+                       Placeholder="311 123 4567"
+                       Margin="-8, -12, 0, 0"
+                       TextChanged="updateEntryValues"></Entry>
+            </VerticalStackLayout>
+
+            <!-- Sección del Quinto Input: Contraseña (INICIA ESCONDIDO)-->
+            <VerticalStackLayout x:Name="vslPassword"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center"
+                                 Margin="0, 90, 0, 0"
+                                 IsVisible="False">
+                <Label Text="Contraseña:"
+                       FontSize="16"
+                       FontFamily="OverpassSemibold"
+                       TextColor="#FFFFFF"></Label>
+
+                <Entry x:Name="entryPassword"
+                       WidthRequest="300"
+                       TextColor="#ffffff"
+                       FontFamily="OverpassRegular"
+                       FontSize="22"
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       Margin="-8, -12, 0, 0"
+                       TextChanged="validatePassword"></Entry>
+            </VerticalStackLayout>
+
+            <!-- Sección del Sexto Input: Confirmar Contraseña (INICIA ESCONDIDO) -->
+            <VerticalStackLayout x:Name="vslConfirmPassword"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center"
+                                 Margin="0, 10, 0, 60"
+                                 IsVisible="False">
+                <Label Text="Confirmar Contraseña:"
+                       FontSize="16"
+                       FontFamily="OverpassSemibold"
+                       TextColor="#FFFFFF"></Label>
+
+                <Entry x:Name="entryConfirmPassword"
+                       WidthRequest="300"
+                       TextColor="#ffffff"
+                       FontFamily="OverpassRegular"
+                       FontSize="22"
+                       Placeholder="Confirmar Contraseña"
+                       IsPassword="True"
+                       Margin="-8, -12, 0, 0"
+                       TextChanged="validatePassword"></Entry>
+            </VerticalStackLayout>
+
+            <!-- Botón de Siguiente -->
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                   Margin="0, 40, 0, 0">
+                <ImageButton x:Name="imagebuttonReturn"
+                             Source="return_arrow_w.svg"
+                             WidthRequest="25"
+                             HeightRequest="25"
+                             VerticalOptions="Center"
+                             CornerRadius="3"
+                             Margin="0, 0, -30, 0"
+                             Clicked="undoNext"
+                             IsVisible="False"></ImageButton>
+
+                <Button x:Name="buttonNext"
+                        Text="Siguiente"
+                        TextColor="#FFFFFF"
+                        TextTransform="Uppercase"
+                        FontFamily="OverpassSemibold"
+                        FontSize="16"
+                        BackgroundColor="Transparent"
+                        WidthRequest="180"
+                        BorderColor="#FFFFFF"
+                        BorderWidth="1"
+                        Margin="45, 0, 45, 0"
+                        Clicked="actionNext"></Button>
+            </HorizontalStackLayout>
+
+            <!-- Sugerencias: ¿Ya tienes una cuenta? -->
+            <Label Text="¿Ya tienes una cuenta en MHYST?"
+                   FontSize="16"
+                   FontFamily="OverpassRegular"
+                   TextColor="#FFFFFF"
+                   HorizontalOptions="Center"
+                   Margin="0, 30, 0, 0"></Label>
+
+            <Button Text="Puedes iniciar sesión aquí."
+                    TextColor="#D090F0"
+                    FontSize="16"
+                    FontFamily="OverpassRegular"
+                    BackgroundColor="Transparent"
+                    Margin="0, -10, 0, 0"
+                    Clicked="goToLoginPage"></Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
