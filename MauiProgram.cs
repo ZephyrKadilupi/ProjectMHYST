@@ -15,6 +15,11 @@ namespace ProjectMHYST
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 
                     //Adición de Fuentes
+                    //Kalam
+                    fonts.AddFont("Kalam-Light.ttf", "KalamLight");
+                    fonts.AddFont("Kalam-Bold.ttf", "KalamBold");
+                    fonts.AddFont("Kalam-Regular.ttf", "KalamRegular");
+
                     //Lexend
                     fonts.AddFont("Lexend-Light.ttf", "LexendLight");
                     fonts.AddFont("Lexend-Medium.ttf", "LexendMedium");

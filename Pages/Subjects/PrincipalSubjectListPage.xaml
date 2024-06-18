@@ -23,6 +23,12 @@
                              Padding="0, 0, 0, 10"
                              Grid.Row="0"
                              Grid.Column="0">
+            <VerticalStackLayout.GestureRecognizers> 
+                <TapGestureRecognizer Tapped="GoToUserPreferences" />
+            </VerticalStackLayout.GestureRecognizers>
+            <!--Lo que está arriba permite añadir un evento OnClick al StackLayout... Por que como siempre, MAUI
+            no podía ser como los demás y añadir una propiedad Clicked, como los botones, ¿verdad?-->
+            
             <Ellipse Fill="#ffffff"
                      Stroke="#404040"
                      StrokeThickness="4"

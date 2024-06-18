@@ -35,4 +35,9 @@ public partial class PrincipalSubjectListPage : ContentPage
             if (dialog_index < 6) lbDialogue.Text = dialog[dialog_index];
         }
 	}
+
+	private async void GoToUserPreferences(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new Forms.UserPreferencesPage());
+	}
 }

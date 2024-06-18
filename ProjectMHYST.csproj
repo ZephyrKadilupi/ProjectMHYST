@@ -55,6 +55,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Kalam-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Kalam-Light.ttf" />
+	  <None Remove="Resources\Fonts\Kalam-Regular.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-Light.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-Medium.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-Regular.ttf" />
@@ -78,6 +81,7 @@
 	  <None Remove="Resources\Images\Cat\cat_normal_w.svg" />
 	  <None Remove="Resources\Images\IconsUI\return_arrow.svg" />
 	  <None Remove="Resources\Images\IconsUI\return_arrow_w.svg" />
+	  <None Remove="Resources\Images\StartPage\start_ilustration.svg" />
 	  <None Remove="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
@@ -102,6 +106,7 @@
 
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\IconsUI\return_arrow_w.svg" />
+	  <MauiImage Include="Resources\Images\StartPage\start_ilustration.svg" />
 	  <MauiSplashScreen Include="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
@@ -115,12 +120,19 @@
 	  <MauiXaml Update="Pages\Forms\SignUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\Forms\UserPreferencesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\Start\StartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Subjects\PrincipalSubjectListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Images\Backgrounds\" />
 	</ItemGroup>
 
 </Project>
