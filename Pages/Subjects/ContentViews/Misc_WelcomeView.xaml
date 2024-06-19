@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMHYST.Pages.Subjects.ContentViews.Misc_WelcomeView">
+    <VerticalStackLayout>
+        <ImageButton Source="cat_normal_w.svg"
+                     WidthRequest="150"
+                     HeightRequest="150"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0, 0, 0, 10"
+                     Clicked="SpecialTouchedDialogue"></ImageButton>
+
+        <Label x:Name="lbDialogue"
+               Text="—¡Has llegado! Me temo que tienes mucho por aprender, ¿o no?"
+               TextColor="#ffffff"
+               FontSize="14"
+               FontFamily="OverpassSemibold"
+               WidthRequest="200"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="5, 0, 5, 0"
+               Margin="10, 0, 0, 0"></Label>
+
+        <Button x:Name="btnContinueDialogue"
+                Text="Click Para Continuar"
+                TextTransform="Uppercase"
+                TextColor="#ffffff"
+                FontSize="11"
+                FontFamily="LexendLight"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                Clicked="NextDialogue"></Button>
+    </VerticalStackLayout>
+</ContentView>

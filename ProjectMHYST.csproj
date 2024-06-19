@@ -83,6 +83,13 @@
 	  <None Remove="Resources\Images\IconsUI\return_arrow_w.svg" />
 	  <None Remove="Resources\Images\StartPage\start_ilustration.svg" />
 	  <None Remove="Resources\Splash\splash.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_algebra.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_analytic_geometry.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_calculus.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_empty.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_probability.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_statistics.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_trigonometry.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -107,6 +114,13 @@
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\IconsUI\return_arrow_w.svg" />
 	  <MauiImage Include="Resources\Images\StartPage\start_ilustration.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_algebra.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_analytic_geometry.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_calculus.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_empty.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_probability.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_statistics.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_trigonometry.svg" />
 	  <MauiSplashScreen Include="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
@@ -124,6 +138,15 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Start\StartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Subjects\ContentViews\ExampleView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Subjects\ContentViews\Misc_WelcomeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Subjects\ContentViews\TopicList_AlgebraView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Subjects\PrincipalSubjectListPage.xaml">

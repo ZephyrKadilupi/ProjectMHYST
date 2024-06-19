@@ -1,43 +1,56 @@
-﻿namespace ProjectMHYST.Pages.Subjects;
+﻿using ProjectMHYST.Pages.Subjects.ContentViews;
+
+namespace ProjectMHYST.Pages.Subjects;
 
 public partial class PrincipalSubjectListPage : ContentPage
 {
-	int dialog_index = 0;
-	string[] dialog = [
-    "—¡Has llegado! Me temo que tienes mucho por aprender, ¿o no?",
-	"*Suspiro*",
-    "—¿Qué quieres repasar hoy?",
-	"",
-    "—No me toques... Eso es de mala educación...",
-    "—¿Q-Quieres parar de una vez?"];
-
 	public PrincipalSubjectListPage()
 	{
 		InitializeComponent();
-	}
 
-
-	private void NextDialogue(object sender, EventArgs e)
-	{
-		if (dialog_index < 3)
-		{
-			dialog_index++;
-			lbDialogue.Text = dialog[dialog_index];
-			if (dialog_index == 3) btnContinueDialogue.IsVisible = false;
-		}
-	}
-
-	private void SpecialTouchedDialogue(object sender, EventArgs e) 
-	{
-		if (dialog_index >= 3)
-		{
-			dialog_index++;
-            if (dialog_index < 6) lbDialogue.Text = dialog[dialog_index];
-        }
+		LoadSubjectContentPage();
 	}
 
 	private async void GoToUserPreferences(object sender, EventArgs e)
 	{
 		await Navigation.PushAsync(new Forms.UserPreferencesPage());
 	}
+
+	private void LoadSubjectContentPage()
+	{
+		ContentView contentView = new Misc_WelcomeView();
+		containerSubjectContentView.Content = contentView;
+	}
+
+	//Métodos de los ImageButtons
+
+	private void showAlgebraContent(object sender, EventArgs e)
+	{
+        ContentView contentView = new TopicList_AlgebraView();
+        containerSubjectContentView.Content = contentView;
+    }
+
+    private void showTrigonometryContent(object sender, EventArgs e)
+    {
+    }
+
+    private void showAnalyticGeometryContent(object sender, EventArgs e)
+    {
+    }
+
+    private void showCalculusContent(object sender, EventArgs e)
+    {
+    }
+
+    private void showStatisticsContent(object sender, EventArgs e)
+    {
+    }
+
+    private void showProbabilityContent(object sender, EventArgs e)
+    {
+    }
+
+    private void showWorkInProgressContent(object sender, EventArgs e)
+    {
+    }
 }

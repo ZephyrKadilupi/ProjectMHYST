@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMHYST.Pages.Subjects.ContentViews.ExampleView">
+    <VerticalStackLayout>
+        <Label 
+            Text="Este es un ContentView (:"
+            TextColor="#fff"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="Este es un ContentView (:"
+               TextColor="#fff"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+
+        <Label Text="Este es un ContentView (:"
+               TextColor="#fff"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+
+        <Label Text="Este es un ContentView (:"
+               TextColor="#fff"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+        <Label Text="Este es un ContentView (:"
+               TextColor="#fff"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+
+        <Label Text="Este es un ContentView (:"
+               TextColor="#fff"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+
+        <Label Text="Este es un ContentView (:"
+               TextColor="#fff"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+
+        <Label Text="Este es un ContentView (:"
+               TextColor="#fff"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentView>

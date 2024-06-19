@@ -59,111 +59,73 @@
                     Grid.Row="1"
                     Grid.Column="0">
             <VerticalStackLayout Background="#F0101010"
+                                 Opacity="0.5"
                                  Padding="0, 10, 0, 0"
                                  Margin="5, 0, 5, 0">
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonAlgebra" 
+                             Source="subject_icon_algebra.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showAlgebraContent"/>
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonTrigonometry"
+                             Source="subject_icon_trigonometry.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showTrigonometryContent"/>
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonAnalyticGeometry"
+                             Source="subject_icon_analytic_geometry.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showAnalyticGeometryContent"/>
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonCalculus"
+                             Source="subject_icon_calculus.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showCalculusContent"/>
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonStatistics"
+                             Source="subject_icon_statistics.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showStatisticsContent"/>
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonProbability"
+                             Source="subject_icon_probability.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showProbabilityContent"/>
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonEmpty1"
+                             Source="subject_icon_empty.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showWorkInProgressContent"/>
 
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
-
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
-
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
-
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
-
-                <Ellipse Fill="#404040"
-                         Stroke="#101010"
-                         StrokeThickness="4"
-                         WidthRequest="75"
-                         HeightRequest="75"
-                         Margin="0, 0, 0, 10"
-                         HorizontalOptions="Center" />
+                <ImageButton x:Name="imgbuttonEmpty2"
+                             Source="subject_icon_empty.svg"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showWorkInProgressContent"/>
             </VerticalStackLayout>
         </ScrollView>
 
@@ -179,7 +141,7 @@
                      Margin="10, 10, 10, 0"></BoxView>
         </VerticalStackLayout>
 
-        <!-- Sección: Tema -->
+        <!-- Sección: Tema (Aquí va la info) -->
         <FlexLayout x:Name="sectionWelcome"
                     BackgroundColor="#101010"
                     JustifyContent="Center"
@@ -187,35 +149,7 @@
                     Grid.Row="0"
                     Grid.RowSpan="3"
                     Grid.Column="1">
-            <VerticalStackLayout>
-                <ImageButton Source="cat_normal_w.svg"
-                       WidthRequest="150"
-                       HeightRequest="150"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       Margin="0, 0, 0, 10"
-                       Clicked="SpecialTouchedDialogue"></ImageButton>
-
-                <Label x:Name="lbDialogue" Text="—¡Has llegado! Me temo que tienes mucho por aprender, ¿o no?"
-                       TextColor="#ffffff"
-                       FontSize="14"
-                       FontFamily="OverpassSemibold"
-                       WidthRequest="200"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       Padding="5, 0, 5, 0"
-                       Margin="10, 0, 0, 0"></Label>
-
-                <Button x:Name="btnContinueDialogue"
-                        Text="Click Para Continuar"
-                        TextTransform="Uppercase"
-                        TextColor="#ffffff"
-                        FontSize="11"
-                        FontFamily="LexendLight"
-                        BackgroundColor="Transparent"
-                        HorizontalOptions="End"
-                        Clicked="NextDialogue"></Button>
-            </VerticalStackLayout>
+            <ContentPresenter x:Name="containerSubjectContentView" />
         </FlexLayout>
     </Grid>
 </ContentPage>

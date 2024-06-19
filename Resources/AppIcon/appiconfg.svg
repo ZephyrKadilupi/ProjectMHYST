@@ -1,4 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 400 400"
+   fill="none"
+   version="1.1"
+   id="svg4"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+	<defs
+	   id="defs4" />
+	<g
+	   id="g4"
+	   transform="matrix(0.65397004,0,0,0.65397004,69.231233,69.344992)">
+		<path
+		   d="m 245.2,134.289 c 48.92,-60.3035 -26.175,-52.0716 -37.074,-57.526 -3.83,-1.914 -7.598,-20.3925 -16.121,-16.1255 -13.125,6.5661 -12.01,40.7455 -13.434,52.1475 -0.773,6.206 -9.438,15.092 -12.286,21.504 -4.546,10.232 -9.541,22.403 -17.892,35.113 -8.35,12.711 -25.801,22.565 -34.536,32.279 -37.175,41.321 -21.2366,89.898 19.578,121.311 41.281,31.772 213.696,19.914 164.964,-53.223"
+		   stroke="#000000"
+		   stroke-opacity="0.9"
+		   stroke-width="16"
+		   stroke-linecap="round"
+		   stroke-linejoin="round"
+		   id="path1"
+		   style="stroke:#ffffff;stroke-opacity:1" />
+		<path
+		   d="m 225.903,162.283 c 12.115,44.344 -5.276,90.653 -5.276,134.074 0,4.997 9.916,0.175 14.774,1.068"
+		   stroke="#000000"
+		   stroke-opacity="0.9"
+		   stroke-width="16"
+		   stroke-linecap="round"
+		   stroke-linejoin="round"
+		   id="path2"
+		   style="stroke:#ffffff;stroke-opacity:1" />
+		<path
+		   d="m 162.667,208.879 c 9.752,1.436 18.652,8.595 25.555,15.287 34.36,33.315 -9.534,55.704 -11.965,67.481 -0.549,2.664 10.778,4.498 13.053,4.742"
+		   stroke="#000000"
+		   stroke-opacity="0.9"
+		   stroke-width="16"
+		   stroke-linecap="round"
+		   stroke-linejoin="round"
+		   id="path3"
+		   style="stroke:#ffffff;stroke-opacity:1" />
+		<path
+		   d="m 211.536,62.994 c 6.625,-6.2145 7.889,4.6628 9.091,10.6438"
+		   stroke="#000000"
+		   stroke-opacity="0.9"
+		   stroke-width="16"
+		   stroke-linecap="round"
+		   stroke-linejoin="round"
+		   id="path4"
+		   style="stroke:#ffffff;stroke-opacity:1" />
+	</g>
+</svg>
+
+
+
+<!--
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="456" height="456" viewBox="0 0 456 456" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <path d="m 105.50037,281.60863 c -2.70293,0 -5.00091,-0.90042 -6.893127,-2.70209 -1.892214,-1.84778 -2.837901,-4.04181 -2.837901,-6.58209 0,-2.58722 0.945687,-4.80389 2.837901,-6.65167 1.892217,-1.84778 4.190197,-2.77167 6.893127,-2.77167 2.74819,0 5.06798,0.92389 6.96019,2.77167 1.93749,1.84778 2.90581,4.06445 2.90581,6.65167 0,2.54028 -0.96832,4.73431 -2.90581,6.58209 -1.89221,1.80167 -4.212,2.70209 -6.96019,2.70209 z" style="fill:#ffffff;fill-rule:nonzero;stroke-width:0.838376" />
@@ -6,3 +65,4 @@
     <path d="m 289.25134,280.08446 h -54.40052 v -99.36009 h 52.23835 v 13.99669 h -36.15411 v 28.13085 h 33.31621 v 13.9271 h -33.31621 v 29.37835 h 38.31628 z" style="fill:#ffffff;fill-rule:nonzero;stroke-width:0.838376" />
     <path d="M 366.56466,194.72106 H 338.7222 v 85.3634 h -16.08423 v -85.3634 h -27.77455 v -13.99669 h 71.70124 z" style="fill:#ffffff;fill-rule:nonzero;stroke-width:0.838376" />
 </svg>
+-->
