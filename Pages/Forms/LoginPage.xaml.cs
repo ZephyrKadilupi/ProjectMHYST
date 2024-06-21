@@ -1,3 +1,5 @@
+using AlohaKit.Animations;
+
 namespace ProjectMHYST.Pages.Forms;
 
 public partial class LoginPage : ContentPage

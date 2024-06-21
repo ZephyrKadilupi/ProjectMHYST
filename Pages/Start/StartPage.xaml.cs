@@ -57,7 +57,15 @@ public partial class StartPage : ContentPage
             Opacity = 1
         };
 
+        //Fade In para la Ilustración
+
         FadeToAnimation imgIllustration_FadeInAnimation = new()
+        {
+            Duration = "500",
+            Opacity = 1
+        };
+
+        FadeToAnimation borderCircleAnimation_FadeInAnimation = new()
         {
             Duration = "500",
             Opacity = 1
@@ -66,8 +74,10 @@ public partial class StartPage : ContentPage
         //Ejecutar las animaciones una detrás de otra.
         await imgTeam.Animate(imgTeam_FadeInAnimation);
         await imgTeam.Animate(imgTeam_FadeOutAnimation);
+
         await imgMhyst.Animate(Mhyst_FadeToAnimation);
         await lbMhyst.Animate(Mhyst_FadeToAnimation);
+        await borderCircleIllustration.Animate(borderCircleAnimation_FadeInAnimation);
         await imgIllustration.Animate(imgIllustration_FadeInAnimation);
         await btnLogin.Animate(btnLogin_FadeInAnimation);
         await btnSignUp.Animate(btnSignUp_FadeInAnimation);

@@ -2,7 +2,8 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectMHYST.Pages.Subjects.ContentViews.Misc_WelcomeView">
-    <VerticalStackLayout>
+
+    <VerticalStackLayout VerticalOptions="Center">
         <ImageButton Source="cat_normal_w.svg"
                      WidthRequest="150"
                      HeightRequest="150"

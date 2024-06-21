@@ -1,4 +1,5 @@
 ﻿using ProjectMHYST.Pages.Subjects.ContentViews;
+using ProjectMHYST.Resources.Values;
 
 namespace ProjectMHYST.Pages.Subjects;
 
@@ -9,7 +10,41 @@ public partial class PrincipalSubjectListPage : ContentPage
 		InitializeComponent();
 
 		LoadSubjectContentPage();
+
+        ApplyThemeColors();
 	}
+
+    string ImageButtonCurrentFocus = "welcome",
+        message = "Este contenido aún no está disponible. Ahora mismo son las 2 de la mañana y no he dormido" +
+        " absolutamente nada, he maldecido al creador de MAUI de tantas maneras que estoy empezando a cuestionar " +
+        "mi propia sanidad. Preferí dormir mis merecidas 2 horas que terminar estas páginas. (:";
+
+
+    //Métodos Miscelanea
+
+    private void ApplyThemeColors()
+    {
+        AppThemeColors appThemeColors = new();
+        Color[] selectedThemeColors = appThemeColors.GetColorArray();
+
+        /*
+         * 0 - Darkest
+         * 1 - Dark
+         * 2 - Highlight
+         * 3 - Lightest
+         * 
+         * (Inverse for Light Theme)
+         */
+
+        UI_UserSection.BackgroundColor = selectedThemeColors[0];
+        lbUsername.TextColor = selectedThemeColors[3];
+        UI_UserSection_UpperLine.BackgroundColor = selectedThemeColors[3];
+        UI_SideBar.BackgroundColor = selectedThemeColors[0];
+        UI_SideBar_ButtonsContainer.BackgroundColor = selectedThemeColors[1];
+        UI_EndOfSideBar.BackgroundColor = selectedThemeColors[0];
+        UI_EndOfSideBar_BottomLine.BackgroundColor = selectedThemeColors[3];
+        UI_SubjectSection.BackgroundColor = selectedThemeColors[1];
+    }
 
 	private async void GoToUserPreferences(object sender, EventArgs e)
 	{
@@ -22,35 +57,148 @@ public partial class PrincipalSubjectListPage : ContentPage
 		containerSubjectContentView.Content = contentView;
 	}
 
+
+
+
+
+
 	//Métodos de los ImageButtons
+
+    private void showWelcomeContent(object sender, EventArgs e)
+    {
+        ContentView contentView = new Misc_WelcomeView();
+        containerSubjectContentView.Content = contentView;
+
+        setImageButtonOpacity("welcome");
+    }
 
 	private void showAlgebraContent(object sender, EventArgs e)
 	{
         ContentView contentView = new TopicList_AlgebraView();
         containerSubjectContentView.Content = contentView;
+
+        setImageButtonOpacity("algebra");
     }
 
     private void showTrigonometryContent(object sender, EventArgs e)
     {
+        DisplayAlert("WIP", message, "OKKKK");
+
+        //setImageButtonOpacity("trigonometry");
     }
 
     private void showAnalyticGeometryContent(object sender, EventArgs e)
     {
+        DisplayAlert("WIP", message, "OKKKK");
+
+        //setImageButtonOpacity("analyticgeometry");
     }
 
     private void showCalculusContent(object sender, EventArgs e)
     {
+        DisplayAlert("WIP", message, "OKKKK");
+
+        //setImageButtonOpacity("calculus");
     }
 
     private void showStatisticsContent(object sender, EventArgs e)
     {
+        DisplayAlert("WIP", message, "OKKKK");
+
+        //setImageButtonOpacity("statistics");
     }
 
     private void showProbabilityContent(object sender, EventArgs e)
     {
+        DisplayAlert("WIP", message, "OKKKK");
+
+        //setImageButtonOpacity("probability");
     }
 
     private void showWorkInProgressContent(object sender, EventArgs e)
     {
+        DisplayAlert("WIP", message, "OKKKK");
+    }
+
+
+
+
+
+    //Otros métodos auxiliares
+
+    private void setImageButtonOpacity(string subject)
+    {
+        bool invalidsubject = false;
+
+        switch (subject)
+        {
+            case "welcome":
+                imgbuttonWelcome.Opacity = 1;
+                break;
+
+            case "algebra":
+                imgbuttonAlgebra.Opacity = 1;
+                break;
+
+            case "trigonometry":
+                imgbuttonTrigonometry.Opacity = 1;
+                break;
+
+            case "analyticgeometry":
+                imgbuttonAnalyticGeometry.Opacity = 1;
+                break;
+
+            case "calculus":
+                imgbuttonCalculus.Opacity = 1;
+                break;
+
+            case "statistics":
+                imgbuttonStatistics.Opacity = 1;
+                break;
+
+            case "probability":
+                imgbuttonProbability.Opacity = 1;
+                break;
+
+            default:
+                invalidsubject = true;
+                break;
+        }
+
+        if (!invalidsubject)
+        {
+            if (ImageButtonCurrentFocus != subject) switch (ImageButtonCurrentFocus)
+            {
+                case "welcome":
+                    imgbuttonWelcome.Opacity = 0.2;
+                    break;
+
+                case "algebra":
+                    imgbuttonAlgebra.Opacity = 0.2;
+                    break;
+
+                case "trigonometry":
+                    imgbuttonTrigonometry.Opacity = 0.2;
+                    break;
+
+                case "analyticgeometry":
+                    imgbuttonAnalyticGeometry.Opacity = 0.2;
+                    break;
+
+                case "calculus":
+                    imgbuttonCalculus.Opacity = 0.2;
+                    break;
+
+                case "statistics":
+                    imgbuttonStatistics.Opacity = 0.2;
+                    break;
+
+                case "probability":
+                    imgbuttonProbability.Opacity = 0.2;
+                    break;
+            }
+
+            ImageButtonCurrentFocus = subject;
+        }
     }
 }

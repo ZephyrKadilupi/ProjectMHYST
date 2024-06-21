@@ -2,10 +2,27 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectMHYST.Pages.Subjects.ContentViews.TopicList_AlgebraView">
-    <VerticalStackLayout>
+    <VerticalStackLayout Margin="0, 100, 0, 0">
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Welcome to .NET MI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <BoxView WidthRequest="200"
+                 HeightRequest="100"
+                 BackgroundColor="#151218"></BoxView>
+
+        <BoxView WidthRequest="140"
+                 HeightRequest="60"
+                 Margin="0, -60, 0, 0"
+                 BackgroundColor="#580e83"></BoxView>
+
+        <BoxView WidthRequest="200"
+                 HeightRequest="100"
+                 BackgroundColor="#3C415C"></BoxView>
+
+        <BoxView WidthRequest="200"
+                 HeightRequest="100"
+                 BackgroundColor="#2c114f"></BoxView>
     </VerticalStackLayout>
 </ContentView>

@@ -5,7 +5,7 @@
              Title="PrincipalSubjectListPage"
              NavigationPage.HasNavigationBar="False">
     
-    <Grid>
+    <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="125" />
             <RowDefinition Height="*" />
@@ -19,14 +19,14 @@
 
 
         <!-- Sección: Usuario -->
-        <VerticalStackLayout BackgroundColor="#000000"
+        <VerticalStackLayout x:Name="UI_UserSection"
                              Padding="0, 0, 0, 10"
                              Grid.Row="0"
                              Grid.Column="0">
             <VerticalStackLayout.GestureRecognizers> 
                 <TapGestureRecognizer Tapped="GoToUserPreferences" />
             </VerticalStackLayout.GestureRecognizers>
-            <!--Lo que está arriba permite añadir un evento OnClick al StackLayout... Por que como siempre, MAUI
+            <!--Lo que está arriba permite añadir un evento OnClick al StackLayout... Porque como siempre, MAUI
             no podía ser como los demás y añadir una propiedad Clicked, como los botones, ¿verdad?-->
             
             <Ellipse Fill="#ffffff"
@@ -39,14 +39,14 @@
 
             <Label x:Name="lbUsername"
                    Text="Usuario"
-                   TextColor="#eeeeee"
                    TextTransform="Uppercase"
                    FontFamily="LexendMedium"
                    FontSize="12"
                    HorizontalTextAlignment="Center"
                    Margin="0, 5, 0, 0" />
 
-            <BoxView BackgroundColor="#20ffffff"
+            <BoxView x:Name="UI_UserSection_UpperLine"
+                     Opacity="0.2"
                      HeightRequest="2"
                      HorizontalOptions="FillAndExpand"
                      Margin="10, 10, 10, 0"></BoxView>
@@ -55,16 +55,25 @@
         <!-- Sección: Temas -->
         <ScrollView x:Name="UI_SideBar"
                     VerticalOptions="FillAndExpand"
-                    BackgroundColor="#000000"
                     Grid.Row="1"
                     Grid.Column="0">
-            <VerticalStackLayout Background="#F0101010"
-                                 Opacity="0.5"
+            <VerticalStackLayout x:Name="UI_SideBar_ButtonsContainer" 
+                                 Opacity="1"
                                  Padding="0, 10, 0, 0"
                                  Margin="5, 0, 5, 0">
 
+                <ImageButton x:Name="imgbuttonWelcome"
+                             Source="subject_icon_welcome.svg"
+                             Opacity="1"
+                             WidthRequest="75"
+                             HeightRequest="75"
+                             Margin="0, 0, 0, 10"
+                             HorizontalOptions="Center"
+                             Clicked="showWelcomeContent"/>
+
                 <ImageButton x:Name="imgbuttonAlgebra" 
                              Source="subject_icon_algebra.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -73,6 +82,7 @@
 
                 <ImageButton x:Name="imgbuttonTrigonometry"
                              Source="subject_icon_trigonometry.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -81,6 +91,7 @@
 
                 <ImageButton x:Name="imgbuttonAnalyticGeometry"
                              Source="subject_icon_analytic_geometry.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -89,6 +100,7 @@
 
                 <ImageButton x:Name="imgbuttonCalculus"
                              Source="subject_icon_calculus.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -97,6 +109,7 @@
 
                 <ImageButton x:Name="imgbuttonStatistics"
                              Source="subject_icon_statistics.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -105,6 +118,7 @@
 
                 <ImageButton x:Name="imgbuttonProbability"
                              Source="subject_icon_probability.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -113,6 +127,7 @@
 
                 <ImageButton x:Name="imgbuttonEmpty1"
                              Source="subject_icon_empty.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -121,6 +136,7 @@
 
                 <ImageButton x:Name="imgbuttonEmpty2"
                              Source="subject_icon_empty.svg"
+                             Opacity="0.2"
                              WidthRequest="75"
                              HeightRequest="75"
                              Margin="0, 0, 0, 10"
@@ -130,26 +146,31 @@
         </ScrollView>
 
         <!-- Sección: Final Temas -->
-        <VerticalStackLayout BackgroundColor="#000000"
+        <VerticalStackLayout x:Name="UI_EndOfSideBar"
                              Padding="0, 0, 0, 10"
                              Grid.Row="2"
                              Grid.Column="0">
 
-            <BoxView BackgroundColor="#20ffffff"
+            <BoxView x:Name="UI_EndOfSideBar_BottomLine"
+                     Opacity="0.2"
                      HeightRequest="2"
                      HorizontalOptions="FillAndExpand"
                      Margin="10, 10, 10, 0"></BoxView>
         </VerticalStackLayout>
 
         <!-- Sección: Tema (Aquí va la info) -->
-        <FlexLayout x:Name="sectionWelcome"
+        <FlexLayout x:Name="UI_SubjectSection"
                     BackgroundColor="#101010"
                     JustifyContent="Center"
-                    AlignItems="Center"
                     Grid.Row="0"
                     Grid.RowSpan="3"
                     Grid.Column="1">
             <ContentPresenter x:Name="containerSubjectContentView" />
+            <!--Este ContentPresenter carga en su interior otra página, un ContentView
+            Esto se hace para cargar únicamente el tema que se va a revisar, y hacer mucho más legible
+            el código. Además lo hace mucho más fácil de mantener y más fácil de manejar para el usuario.
+            En otras palabras, esta página no es más que un contenedor o esqueleto que sirve a modo de interfaz
+            para las páginas de los temas.-->
         </FlexLayout>
     </Grid>
 </ContentPage>

@@ -90,6 +90,7 @@
 	  <None Remove="Resources\Subjects\Icons\subject_icon_probability.svg" />
 	  <None Remove="Resources\Subjects\Icons\subject_icon_statistics.svg" />
 	  <None Remove="Resources\Subjects\Icons\subject_icon_trigonometry.svg" />
+	  <None Remove="Resources\Subjects\Icons\subject_icon_welcome.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -121,6 +122,7 @@
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_probability.svg" />
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_statistics.svg" />
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_trigonometry.svg" />
+	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_welcome.svg" />
 	  <MauiSplashScreen Include="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
