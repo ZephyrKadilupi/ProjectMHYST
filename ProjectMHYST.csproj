@@ -55,6 +55,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Resources\Images\Backgrounds\**" />
+	  <Compile Remove="Resources\Images\Backgrounds\**" />
+	  <EmbeddedResource Remove="Resources\Images\Backgrounds\**" />
+	  <MauiCss Remove="Resources\Images\Backgrounds\**" />
+	  <MauiImage Remove="Resources\Images\Backgrounds\**" />
+	  <MauiXaml Remove="Resources\Images\Backgrounds\**" />
+	  <None Remove="Resources\Images\Backgrounds\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Fonts\Kalam-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Kalam-Light.ttf" />
 	  <None Remove="Resources\Fonts\Kalam-Regular.ttf" />
@@ -81,6 +91,12 @@
 	  <None Remove="Resources\Images\Cat\cat_normal_w.svg" />
 	  <None Remove="Resources\Images\IconsUI\return_arrow.svg" />
 	  <None Remove="Resources\Images\IconsUI\return_arrow_w.svg" />
+	  <None Remove="Resources\Images\Profile\profile_1.svg" />
+	  <None Remove="Resources\Images\Profile\profile_2.svg" />
+	  <None Remove="Resources\Images\Profile\profile_3.svg" />
+	  <None Remove="Resources\Images\Profile\profile_4.svg" />
+	  <None Remove="Resources\Images\Profile\profile_5.svg" />
+	  <None Remove="Resources\Images\Profile\profile_6.svg" />
 	  <None Remove="Resources\Images\StartPage\start_ilustration.svg" />
 	  <None Remove="Resources\Splash\splash.svg" />
 	  <None Remove="Resources\Subjects\Icons\subject_icon_algebra.svg" />
@@ -114,6 +130,12 @@
 
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\IconsUI\return_arrow_w.svg" />
+	  <MauiImage Include="Resources\Images\Profile\profile_1.svg" />
+	  <MauiImage Include="Resources\Images\Profile\profile_2.svg" />
+	  <MauiImage Include="Resources\Images\Profile\profile_3.svg" />
+	  <MauiImage Include="Resources\Images\Profile\profile_4.svg" />
+	  <MauiImage Include="Resources\Images\Profile\profile_5.svg" />
+	  <MauiImage Include="Resources\Images\Profile\profile_6.svg" />
 	  <MauiImage Include="Resources\Images\StartPage\start_ilustration.svg" />
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_algebra.svg" />
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_analytic_geometry.svg" />
@@ -154,10 +176,6 @@
 	  <MauiXaml Update="Pages\Subjects\PrincipalSubjectListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Resources\Images\Backgrounds\" />
 	</ItemGroup>
 
 </Project>

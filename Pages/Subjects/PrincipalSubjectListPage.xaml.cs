@@ -12,7 +12,11 @@ public partial class PrincipalSubjectListPage : ContentPage
 		LoadSubjectContentPage();
 
         ApplyThemeColors();
+
+        ShowCurrentProfilePic();
 	}
+
+    int profilepic = Preferences.Default.Get("profile_pic", 1);
 
     string ImageButtonCurrentFocus = "welcome",
         message = "Este contenido aún no está disponible. Ahora mismo son las 2 de la mañana y no he dormido" +
@@ -57,7 +61,35 @@ public partial class PrincipalSubjectListPage : ContentPage
 		containerSubjectContentView.Content = contentView;
 	}
 
+    private void ShowCurrentProfilePic()
+    {
+        switch (profilepic)
+        {
+            case 1:
+                imgUserProfilePic.Source = "profile_1.svg";
+                break;
 
+            case 2:
+                imgUserProfilePic.Source = "profile_2.svg";
+                break;
+
+            case 3:
+                imgUserProfilePic.Source = "profile_3.svg";
+                break;
+
+            case 4:
+                imgUserProfilePic.Source = "profile_4.svg";
+                break;
+
+            case 5:
+                imgUserProfilePic.Source = "profile_5.svg";
+                break;
+
+            case 6:
+                imgUserProfilePic.Source = "profile_6.svg";
+                break;
+        }
+    }
 
 
 

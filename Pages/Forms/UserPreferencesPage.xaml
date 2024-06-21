@@ -28,11 +28,13 @@
                Grid.Column="0"
                Grid.ColumnSpan="3"></Label>
 
-        <Ellipse BackgroundColor="#fff"
-                 WidthRequest="80"
-                 HeightRequest="80"
-                 Grid.Row="1"
-                 Grid.Column="0"></Ellipse>
+
+        <Image x:Name="imgUserProfilePic"
+               Source="profile_1.svg"
+               WidthRequest="80"
+               HeightRequest="80"
+               Grid.Row="1"
+               Grid.Column="0"></Image>
 
         <!--Sección del Ícono del Usuario-->
         <VerticalStackLayout VerticalOptions="Center"
@@ -64,11 +66,12 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2">
             <VerticalStackLayout>
-                <Grid> <!--Opción de la Foto de Perfil-->
+                <Grid x:Name="gridProfilePics"> <!--Opción de la Foto de Perfil-->
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="100"></RowDefinition>
                         <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -80,7 +83,7 @@
                     <BoxView BackgroundColor="#05ffffff"
                              CornerRadius="20"
                              Grid.Row="0"
-                             Grid.RowSpan="3"
+                             Grid.RowSpan="4"
                              Grid.Column="0"
                              Grid.ColumnSpan="3"></BoxView>
 
@@ -94,53 +97,78 @@
                            Grid.Column="0"
                            Grid.ColumnSpan="3"></Label>
 
-                    <Ellipse BackgroundColor="#fff"
-                             WidthRequest="80"
-                             HeightRequest="80"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Grid.Row="1"
-                             Grid.Column="0"></Ellipse>
+                    <ImageButton x:Name="imgbuttonProfile1"
+                                 Source="profile_1.svg"
+                                 WidthRequest="80"
+                                 HeightRequest="80"
+                                 VerticalOptions="Center"
+                                 Opacity="0.3"
+                                 Grid.Row="1"
+                                 Grid.Column="0"
+                                 Clicked="SetProfilePic1"></ImageButton>
 
-                    <Ellipse BackgroundColor="#fff"
-                             WidthRequest="80"
-                             HeightRequest="80"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Grid.Row="1"
-                             Grid.Column="1"></Ellipse>
+                    <ImageButton x:Name="imgbuttonProfile2"
+                                 Source="profile_2.svg"
+                                 WidthRequest="80"
+                                 HeightRequest="80"
+                                 VerticalOptions="Center"
+                                 Opacity="0.3"
+                                 Grid.Row="1"
+                                 Grid.Column="1"
+                                 Clicked="SetProfilePic2"></ImageButton>
 
-                    <Ellipse BackgroundColor="#fff"
-                             WidthRequest="80"
-                             HeightRequest="80"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Grid.Row="1"
-                             Grid.Column="2"></Ellipse>
+                    <ImageButton x:Name="imgbuttonProfile3"
+                                 Source="profile_3.svg"
+                                 WidthRequest="80"
+                                 HeightRequest="80"
+                                 VerticalOptions="Center"
+                                 Opacity="0.3"
+                                 Grid.Row="1"
+                                 Grid.Column="2"
+                                 Clicked="SetProfilePic3"></ImageButton>
 
-                    <Ellipse BackgroundColor="#fff"
-                             WidthRequest="80"
-                             HeightRequest="80"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Grid.Row="2"
-                             Grid.Column="0"></Ellipse>
+                    <ImageButton x:Name="imgbuttonProfile4"
+                                 Source="profile_4.svg"
+                                 WidthRequest="80"
+                                 HeightRequest="80"
+                                 VerticalOptions="Center"
+                                 Opacity="0.3"
+                                 Grid.Row="2"
+                                 Grid.Column="0"
+                                 Clicked="SetProfilePic4"></ImageButton>
 
-                    <Ellipse BackgroundColor="#fff"
-                             WidthRequest="80"
-                             HeightRequest="80"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Grid.Row="2"
-                             Grid.Column="1"></Ellipse>
+                    <ImageButton x:Name="imgbuttonProfile5"
+                                 Source="profile_5.svg"
+                                 WidthRequest="80"
+                                 HeightRequest="80"
+                                 VerticalOptions="Center"
+                                 Opacity="0.3"
+                                 Grid.Row="2"
+                                 Grid.Column="1"
+                                 Clicked="SetProfilePic5"></ImageButton>
 
-                    <Ellipse BackgroundColor="#fff"
-                             WidthRequest="80"
-                             HeightRequest="80"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Grid.Row="2"
-                             Grid.Column="2"></Ellipse>
+                    <ImageButton x:Name="imgbuttonProfile6"
+                                 Source="profile_6.svg"
+                                 WidthRequest="80"
+                                 HeightRequest="80"
+                                 VerticalOptions="Center"
+                                 Opacity="0.3"
+                                 Grid.Row="2"
+                                 Grid.Column="2"
+                                 Clicked="SetProfilePic6"></ImageButton>
+
+                    <Label x:Name="lbProfilePicTip"
+                           Text="*Los cambios no surtirán efecto hasta que la aplicación se reinicie."
+                           TextColor="#96f"
+                           FontSize="14"
+                           FontFamily="Overpass"
+                           LineBreakMode="CharacterWrap"
+                           MaxLines="5"
+                           Margin="10, 0, 0, 10"
+                           Grid.Row="3"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           IsVisible="False"></Label>
                 </Grid>
 
                 <Grid Margin="0, 20, 0, 0">
