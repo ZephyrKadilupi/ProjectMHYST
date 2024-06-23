@@ -5,7 +5,7 @@
              Title="LoginPage_After"
              NavigationPage.HasNavigationBar="False">
     
-    <VerticalStackLayout BackgroundColor="#101010">
+    <VerticalStackLayout x:Name="stackMain" BackgroundColor="#101010">
         <!-- Sección que contiene el Logo y el Nombre -->
         <FlexLayout JustifyContent="Center"
                     Margin="0, 40, 0, 0">

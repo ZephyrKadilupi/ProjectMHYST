@@ -28,8 +28,9 @@ public partial class PrincipalSubjectListPage : ContentPage
 
     private void ApplyThemeColors()
     {
+        string colortheme = Preferences.Default.Get("color_theme", "default-theme"); 
         AppThemeColors appThemeColors = new();
-        Color[] selectedThemeColors = appThemeColors.GetColorArray();
+        Color[] selectedThemeColors = appThemeColors.GetColorArray(colortheme);
 
         /*
          * 0 - Darkest

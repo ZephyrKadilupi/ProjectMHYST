@@ -1,5 +1,6 @@
 ﻿using ProjectMHYST.Pages.Forms;
 using AlohaKit.Animations;
+using ProjectMHYST.Resources.Values;
 
 namespace ProjectMHYST.Pages.Start;
 
@@ -8,7 +9,19 @@ public partial class StartPage : ContentPage
 	public StartPage()
 	{
 		InitializeComponent();
+
+        ApplyThemeColors();
 	}
+
+    private void ApplyThemeColors()
+    {
+        string colortheme = Preferences.Default.Get("color_theme", "default-theme");
+        AppThemeColors appThemeColors = new();
+        Color[] selectedThemeColors = appThemeColors.GetColorArray(colortheme);
+
+        layoutMain.BackgroundColor = selectedThemeColors[1];
+        borderCircleIllustration.BackgroundColor = selectedThemeColors[0];
+    }
 
     public async void goToLoginPage(Object sender, EventArgs e)
     {
@@ -68,7 +81,7 @@ public partial class StartPage : ContentPage
         FadeToAnimation borderCircleAnimation_FadeInAnimation = new()
         {
             Duration = "500",
-            Opacity = 1
+            Opacity = 0.3
         };
 
         //Ejecutar las animaciones una detrás de otra.

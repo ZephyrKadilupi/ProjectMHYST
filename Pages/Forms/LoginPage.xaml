@@ -5,7 +5,8 @@
              Title="LoginPage"
              NavigationPage.HasNavigationBar="False">
     
-    <ScrollView BackgroundColor="#101010">
+    <ScrollView x:Name="scrollMain" 
+                BackgroundColor="#101010">
         <VerticalStackLayout>
 
             <!-- Sección que contiene el Logo y el Nombre -->
@@ -107,8 +108,8 @@
                    HorizontalOptions="Center"
                    Margin="0, 30, 0, 0"></Label>
 
-            <Button Text="Puedes registrarte aquí."
-                    TextColor="#D090F0"
+            <Button x:Name="btnGoToSignUp" 
+                    Text="Puedes registrarte aquí."
                     FontSize="16"
                     FontFamily="OverpassRegular"
                     BackgroundColor="Transparent"

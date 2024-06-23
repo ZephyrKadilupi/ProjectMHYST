@@ -3,26 +3,98 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectMHYST.Pages.Subjects.ContentViews.TopicList_AlgebraView">
     <VerticalStackLayout Margin="0, 100, 0, 0">
-        <Label 
-            Text="Welcome to .NET MI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Temas de"
+               FontFamily="OverpassLight"
+               FontSize="16"
+               ></Label>
 
-        <BoxView WidthRequest="200"
-                 HeightRequest="100"
-                 BackgroundColor="#151218"></BoxView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <BoxView WidthRequest="140"
-                 HeightRequest="60"
-                 Margin="0, -60, 0, 0"
-                 BackgroundColor="#580e83"></BoxView>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-        <BoxView WidthRequest="200"
-                 HeightRequest="100"
-                 BackgroundColor="#3C415C"></BoxView>
+            <BoxView Grid.Row="0"
+                     Grid.Column="0"
+                     BackgroundColor="#301545" />
 
-        <BoxView WidthRequest="200"
-                 HeightRequest="100"
-                 BackgroundColor="#2c114f"></BoxView>
+            <BoxView Grid.Row="0"
+                     Grid.Column="1"
+                     BackgroundColor="#100515" />
+
+            <BoxView Grid.Row="0"
+                     Grid.Column="2"
+                     BackgroundColor="#D090F0" />
+
+            <BoxView Grid.Row="0"
+                     Grid.Column="3"
+                     BackgroundColor="#ffffff" />
+
+
+
+
+            <BoxView Grid.Row="1"
+                     Grid.Column="0"
+                     BackgroundColor="#451515" />
+
+            <BoxView Grid.Row="1"
+                     Grid.Column="1"
+                     BackgroundColor="#150505" />
+
+            <BoxView Grid.Row="1"
+                     Grid.Column="2"
+                     BackgroundColor="#F0A090" />
+
+            <BoxView Grid.Row="1"
+                     Grid.Column="3"
+                     BackgroundColor="#ffffff" />
+
+
+
+
+            <BoxView Grid.Row="2"
+                     Grid.Column="0"
+                     BackgroundColor="#450030" />
+
+            <BoxView Grid.Row="2"
+                     Grid.Column="1"
+                     BackgroundColor="#200010" />
+
+            <BoxView Grid.Row="2"
+                     Grid.Column="2"
+                     BackgroundColor="#D060C0" />
+
+            <BoxView Grid.Row="2"
+                     Grid.Column="3"
+                     BackgroundColor="#ffffff" />
+
+
+
+
+            <BoxView Grid.Row="3"
+                     Grid.Column="0"
+                     BackgroundColor="#453000" />
+
+            <BoxView Grid.Row="3"
+                     Grid.Column="1"
+                     BackgroundColor="#151000" />
+
+            <BoxView Grid.Row="3"
+                     Grid.Column="2"
+                     BackgroundColor="#F0C060" />
+
+            <BoxView Grid.Row="3"
+                     Grid.Column="3"
+                     BackgroundColor="#ffffff" />
+        </Grid>
     </VerticalStackLayout>
 </ContentView>

@@ -5,7 +5,8 @@
              Title="UserPreferencesPage"
              NavigationPage.HasNavigationBar="False">
 
-    <Grid Padding="30,60,30,20"
+    <Grid x:Name="gridMain" 
+          Padding="30,60,30,20"
           BackgroundColor="#101010">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -45,7 +46,8 @@
                    FontFamily="LexendLight"
                    TextTransform="Uppercase"></Label>
 
-            <Label Text="Información Adicional"
+            <Label x:Name="lbExtraInfo" 
+                   Text="Información Adicional"
                    TextColor="#D090F0"
                    FontSize="14"
                    FontFamily="OverpassLight"></Label>
@@ -171,9 +173,16 @@
                            IsVisible="False"></Label>
                 </Grid>
 
+                <!--Grid de Tema de Aplicación-->
                 <Grid Margin="0, 20, 0, 0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -184,6 +193,7 @@
                     <BoxView BackgroundColor="#05ffffff"
                              CornerRadius="20"
                              Grid.Row="0"
+                             Grid.RowSpan="7"
                              Grid.Column="0"
                              Grid.ColumnSpan="2"></BoxView>
 
@@ -197,22 +207,243 @@
                            Grid.Column="0"
                            Grid.ColumnSpan="3"></Label>
 
-                    <Border Stroke="#409060f0"
-                            StrokeThickness="2"
-                            StrokeShape="RoundRectangle 10,10,10,10"
-                        Grid.Row="0"
-                             Grid.Column="1"></Border>
+                    <!--Grid de Tema 0 (Default) -->
+                    <Grid x:Name="gridTheme0"
+                          Grid.Row="1"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="3"
+                          Margin="30, 10, 30, 0"
+                          Padding="5, 0, 5, 0">
 
-                    <Button Text="Oscuro"
-                            TextColor="#96f"
-                            FontSize="16"
-                            FontFamily="LexendLight"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Background="Transparent"
-                            Grid.Row="0"
-                            Grid.Column="2"></Button>
-                            
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SetTheme0" />
+                        </Grid.GestureRecognizers>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Tema Por Defecto"
+                               TextColor="#fff"
+                               FontSize="14"
+                               FontFamily="OverpassLight"
+                               Margin="0, 10, 0, 10"
+                               VerticalOptions="Center"
+                               Grid.Column="0"></Label>
+
+                        <BoxView x:Name="bwTheme0Color1"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="1"></BoxView>
+
+                        <BoxView x:Name="bwTheme0Color2"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="2"></BoxView>
+
+                        <BoxView x:Name="bwTheme0Color3"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="3"></BoxView>
+
+                        <BoxView x:Name="bwTheme0Color4"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="4"></BoxView>
+                    </Grid>
+
+                    <!--Grid de Tema 1-->
+                    <Grid x:Name="gridTheme1" 
+                          Grid.Row="2"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="3"
+                          Margin="30, 0, 30, 0"
+                          Padding="5, 0, 5, 0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SetTheme1" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Tema Oscuro 1"
+                               TextColor="#fff"
+                               FontSize="14"
+                               FontFamily="OverpassLight"
+                               Margin="0, 10, 0, 10"
+                               VerticalOptions="Center"
+                               Grid.Column="0"></Label>
+
+                        <BoxView x:Name="bwTheme1Color1"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="1"></BoxView>
+
+                        <BoxView x:Name="bwTheme1Color2"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="2"></BoxView>
+
+                        <BoxView x:Name="bwTheme1Color3"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="3"></BoxView>
+
+                        <BoxView x:Name="bwTheme1Color4"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="4"></BoxView>
+                    </Grid>
+
+                    <!--Grid de Tema 2-->
+                    <Grid x:Name="gridTheme2"
+                          Grid.Row="3"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="3"
+                          Margin="30, 0, 30, 0"
+                          Padding="5, 0, 5, 0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SetTheme2" />
+                        </Grid.GestureRecognizers>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Tema Oscuro 2"
+                               TextColor="#fff"
+                               FontSize="14"
+                               FontFamily="OverpassLight"
+                               Margin="0, 10, 0, 10"
+                               VerticalOptions="Center"
+                               Grid.Column="0"></Label>
+
+                        <BoxView x:Name="bwTheme2Color1"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="1"></BoxView>
+
+                        <BoxView x:Name="bwTheme2Color2"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="2"></BoxView>
+
+                        <BoxView x:Name="bwTheme2Color3"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="3"></BoxView>
+
+                        <BoxView x:Name="bwTheme2Color4"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="4"></BoxView>
+                    </Grid>
+
+                    <!--Grid de Tema 3-->
+                    <Grid x:Name="gridTheme3"
+                          Grid.Row="4"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="3"
+                          Margin="30, 0, 30, 0"
+                          Padding="5, 0, 5, 0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SetTheme3" />
+                        </Grid.GestureRecognizers>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Tema Oscuro 3"
+                               TextColor="#fff"
+                               FontSize="14"
+                               FontFamily="OverpassLight"
+                               Margin="0, 10, 0, 10"
+                               VerticalOptions="Center"
+                               Grid.Column="0"></Label>
+
+                        <BoxView x:Name="bwTheme3Color1"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="1"></BoxView>
+
+                        <BoxView x:Name="bwTheme3Color2"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="2"></BoxView>
+
+                        <BoxView x:Name="bwTheme3Color3"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="3"></BoxView>
+
+                        <BoxView x:Name="bwTheme3Color4"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="4"></BoxView>
+                    </Grid>
+
+                    <!--Grid de Tema 4-->
+                    <Grid x:Name="gridTheme4"
+                          Grid.Row="5"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="3"
+                          Margin="30, 0, 30, 10"
+                          Padding="5, 0, 5, 0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SetTheme4" />
+                        </Grid.GestureRecognizers>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Tema Oscuro 4"
+                               TextColor="#fff"
+                               FontSize="14"
+                               FontFamily="OverpassLight"
+                               Margin="0, 10, 0, 10"
+                               VerticalOptions="Center"
+                               Grid.Column="0"></Label>
+
+                        <BoxView x:Name="bwTheme4Color1"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="1"></BoxView>
+
+                        <BoxView x:Name="bwTheme4Color2"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="2"></BoxView>
+
+                        <BoxView x:Name="bwTheme4Color3"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="3"></BoxView>
+
+                        <BoxView x:Name="bwTheme4Color4"
+                                 Margin="0, 5, 0, 5"
+                                 Grid.Column="4"></BoxView>
+                    </Grid>
+
+                    <Label x:Name="lbColorThemeTip"
+                           Text="*Los cambios no surtirán efecto hasta que la aplicación se reinicie."
+                           TextColor="#96f"
+                           FontSize="14"
+                           FontFamily="Overpass"
+                           LineBreakMode="CharacterWrap"
+                           MaxLines="5"
+                           Margin="10, 0, 0, 10"
+                           Grid.Row="6"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           IsVisible="False"></Label>
                 </Grid>
 
                 <Grid Margin="0, 20, 0, 0">
@@ -230,7 +461,8 @@
                              Grid.Column="0"
                              Grid.ColumnSpan="2"></BoxView>
 
-                    <Button Text="Actualizar Datos Personales"
+                    <Button x:Name="btnUpdateInfo" 
+                            Text="Actualizar Datos Personales"
                             TextColor="#96f"
                             FontSize="16"
                             FontFamily="LexendLight"
