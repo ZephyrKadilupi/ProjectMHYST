@@ -21,7 +21,7 @@ public partial class LoginPage : ContentPage
         Color[] selectedThemeColors = appThemeColors.GetColorArray(colortheme);
 
         scrollMain.BackgroundColor = selectedThemeColors[1];
-        btnGoToSignUp.TextColor = selectedThemeColors[3];
+        btnGoToSignUp.TextColor = selectedThemeColors[2];
     }
 
     public void goToSignUpPage(object sender, EventArgs e)

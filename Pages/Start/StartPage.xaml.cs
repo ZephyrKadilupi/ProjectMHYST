@@ -1,6 +1,7 @@
 ﻿using ProjectMHYST.Pages.Forms;
 using AlohaKit.Animations;
 using ProjectMHYST.Resources.Values;
+using Android.App.Admin;
 
 namespace ProjectMHYST.Pages.Start;
 
@@ -94,5 +95,15 @@ public partial class StartPage : ContentPage
         await imgIllustration.Animate(imgIllustration_FadeInAnimation);
         await btnLogin.Animate(btnLogin_FadeInAnimation);
         await btnSignUp.Animate(btnSignUp_FadeInAnimation);
+    }
+
+    private async void ResetFlags(object sender, EventArgs e)
+    {
+        string txt = "¿Quieres fingir que nada ha pasado y resetear las flags de los eventos? Esto no afectara las " +
+            "preferencias guardadas como la paleta de colores o la foto de perfil";
+
+        bool ans = await DisplayAlert("¿Resetear Flags?", txt, "Ajá", "Nop");
+
+        if (ans) Preferences.Default.Set("cat_fled_away", false);
     }
 }
