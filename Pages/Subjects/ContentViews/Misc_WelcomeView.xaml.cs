@@ -11,6 +11,13 @@ public partial class Misc_WelcomeView : ContentView
     public Misc_WelcomeView()
 	{
 		InitializeComponent();
+
+        PlayFadeInAnimation();
+    }
+
+    private void PlayFadeInAnimation()
+    {
+        stackMain.Animate(new FadeInAnimation() { Delay=200 });
     }
 
     private void ApplyPastEvents(object sender, EventArgs e)

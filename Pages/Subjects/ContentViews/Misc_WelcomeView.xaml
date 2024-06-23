@@ -4,7 +4,9 @@
              x:Class="ProjectMHYST.Pages.Subjects.ContentViews.Misc_WelcomeView"
              Loaded="ApplyPastEvents">
 
-    <VerticalStackLayout VerticalOptions="Center">
+    <VerticalStackLayout x:Name="stackMain" 
+                         VerticalOptions="Center"
+                         Opacity="0">
         <ImageButton x:Name="imgCat"
                      Source="cat_normal_w.svg"
                      WidthRequest="150"

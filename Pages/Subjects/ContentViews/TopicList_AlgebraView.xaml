@@ -2,99 +2,64 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectMHYST.Pages.Subjects.ContentViews.TopicList_AlgebraView">
-    <VerticalStackLayout Margin="0, 100, 0, 0">
+    
+    <VerticalStackLayout x:Name="stackMain"
+                         Opacity="0"
+                         Margin="0, 60, 0, 0">
         <Label Text="Temas de"
                FontFamily="OverpassLight"
                FontSize="16"
-               ></Label>
+               TextColor="#ffffff"
+               HorizontalOptions="Center"
+               Margin="0, 0, 0, -10"></Label>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-            </Grid.RowDefinitions>
+        <Label Text="ÁLGEBRA"
+               FontFamily="LexendLight"
+               FontSize="30"
+               TextColor="#ffffff"
+               HorizontalOptions="Center"></Label>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <FlexLayout Direction="Column"
+                    MaximumWidthRequest="450"
+                    Margin="10, 40, 10, 0">
 
-            <BoxView Grid.Row="0"
-                     Grid.Column="0"
-                     BackgroundColor="#301545" />
+            <Border>
+                <Button Text="Triángulo de Pascal"
+                        FontFamily="OverpassLight"
+                        FontSize="16"
+                        TextColor="#ffffff"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start"
+                        Clicked="GoToPascalsTriangle"></Button>
+            </Border>
 
-            <BoxView Grid.Row="0"
-                     Grid.Column="1"
-                     BackgroundColor="#100515" />
+            <Border>
+                <Button Text="Binomio de Newton"
+                        FontFamily="OverpassLight"
+                        FontSize="16"
+                        TextColor="#ffffff"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start"></Button>
+            </Border>
 
-            <BoxView Grid.Row="0"
-                     Grid.Column="2"
-                     BackgroundColor="#D090F0" />
+            <Border>
+                <Button Text="Ecuaciones Cuadráticas"
+                        FontFamily="OverpassLight"
+                        FontSize="16"
+                        TextColor="#ffffff"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start"></Button>
+            </Border>
 
-            <BoxView Grid.Row="0"
-                     Grid.Column="3"
-                     BackgroundColor="#ffffff" />
-
-
-
-
-            <BoxView Grid.Row="1"
-                     Grid.Column="0"
-                     BackgroundColor="#451515" />
-
-            <BoxView Grid.Row="1"
-                     Grid.Column="1"
-                     BackgroundColor="#150505" />
-
-            <BoxView Grid.Row="1"
-                     Grid.Column="2"
-                     BackgroundColor="#F0A090" />
-
-            <BoxView Grid.Row="1"
-                     Grid.Column="3"
-                     BackgroundColor="#ffffff" />
-
-
-
-
-            <BoxView Grid.Row="2"
-                     Grid.Column="0"
-                     BackgroundColor="#450030" />
-
-            <BoxView Grid.Row="2"
-                     Grid.Column="1"
-                     BackgroundColor="#200010" />
-
-            <BoxView Grid.Row="2"
-                     Grid.Column="2"
-                     BackgroundColor="#D060C0" />
-
-            <BoxView Grid.Row="2"
-                     Grid.Column="3"
-                     BackgroundColor="#ffffff" />
-
-
-
-
-            <BoxView Grid.Row="3"
-                     Grid.Column="0"
-                     BackgroundColor="#453000" />
-
-            <BoxView Grid.Row="3"
-                     Grid.Column="1"
-                     BackgroundColor="#151000" />
-
-            <BoxView Grid.Row="3"
-                     Grid.Column="2"
-                     BackgroundColor="#F0C060" />
-
-            <BoxView Grid.Row="3"
-                     Grid.Column="3"
-                     BackgroundColor="#ffffff" />
-        </Grid>
+            <Border>
+                <Button Text="Descomp. en Factores Primos"
+                        LineBreakMode="CharacterWrap"
+                        FontFamily="OverpassLight"
+                        FontSize="16"
+                        TextColor="#ffffff"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start"></Button>
+            </Border>
+        </FlexLayout>
     </VerticalStackLayout>
 </ContentView>

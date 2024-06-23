@@ -1,4 +1,6 @@
+using AlohaKit.Animations;
 using Microsoft.Maui.Controls;
+using ProjectMHYST.Resources.Values;
 
 namespace ProjectMHYST.Pages.Forms;
 
@@ -9,8 +11,26 @@ public partial class SignUpPage : ContentPage
     public SignUpPage()
 	{
 		InitializeComponent();
+
+        ApplyThemeColors();
+
+        PlayFadeInAnimation();
 	}
-       
+    private void PlayFadeInAnimation()
+    {
+        scrollMain.Animate(new FadeInAnimation() { Delay=200 });
+    }
+
+    private void ApplyThemeColors()
+    {
+        string colortheme = Preferences.Default.Get("color_theme", "default-theme");
+        AppThemeColors appThemeColors = new();
+        Color[] selectedThemeColors = appThemeColors.GetColorArray(colortheme);
+
+        scrollMain.BackgroundColor = selectedThemeColors[1];
+        btnGoToLoginPage.TextColor = selectedThemeColors[2];
+    }
+
     public void goToLoginPage(object sender, EventArgs e)
     {
         Navigation.PushAsync(new LoginPage());

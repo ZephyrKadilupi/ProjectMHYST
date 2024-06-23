@@ -4,11 +4,13 @@
              x:Class="ProjectMHYST.Pages.Forms.LoginPage_After"
              Title="LoginPage_After"
              NavigationPage.HasNavigationBar="False">
-    
-    <VerticalStackLayout x:Name="stackMain" BackgroundColor="#101010">
+
+    <AbsoluteLayout x:Name="stackMain">
         <!-- Sección que contiene el Logo y el Nombre -->
-        <FlexLayout JustifyContent="Center"
-                    Margin="0, 40, 0, 0">
+        <FlexLayout x:Name="flexLogo" JustifyContent="Center"
+                    Opacity="0"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.05, Autosize, Autosize">
             <HorizontalStackLayout HorizontalOptions="Center">
                 <Image Source="mhyst_w.svg"
                        WidthRequest="60"
@@ -26,20 +28,54 @@
             </HorizontalStackLayout>
         </FlexLayout>
 
-        <!-- Bienvenida -->
-        <Label Text="Bienvenido,"
-               FontSize="26"
-               FontFamily="OverpassRegular"
-               TextColor="#FFFFFF"
-               HorizontalTextAlignment="Center"
-               Margin="0, 90, 0, 5" />
+        <Border x:Name="borderCircle"
+                StrokeShape="Ellipse"
+                Stroke="Transparent"
+                Opacity="0"
+                WidthRequest="350"
+                HeightRequest="350"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.5, 0.47, Autosize, Autosize"/>
 
-        <Label x:Name="lbWelcome"
-               Text="Usuario"
-               FontSize="38"
-               FontFamily="OverpassSemibold"
-               TextColor="#FFFFFF"
-               HorizontalTextAlignment="Center" />
+        <Border x:Name="borderCircleDeco1"
+                StrokeShape="Ellipse"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.85, 0.25, 150, 150"></Border>
+
+        <Border x:Name="borderCircleDeco2"
+                StrokeShape="Ellipse"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.3, 0.55, 80, 80"></Border>
+
+        <Border x:Name="borderCircleDeco3"
+                StrokeShape="Ellipse"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.15, 0.65, 50, 50"></Border>
+
+        <VerticalStackLayout x:Name="stackUserWelcome" 
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Opacity="0"
+                             AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0.5, 0.44">
+            <!-- Bienvenida -->
+            <Label Text="Bienvenido,"
+                   FontSize="22"
+                   FontFamily="OverpassRegular"
+                   TextColor="#FFFFFF"
+                   HorizontalTextAlignment="Center"
+                   Margin="0, 90, 0, -5" />
+
+            <Label x:Name="lbWelcome"
+                   Text="Usuario"
+                   FontSize="44"
+                   FontFamily="LexendMedium"
+                   TextColor="#FFFFFF"
+                   HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
 
         <!-- Botón de Continuar -->
         <Button x:Name="btnContinue"
@@ -52,7 +88,10 @@
                 WidthRequest="180"
                 BorderColor="#FFFFFF"
                 BorderWidth="1"
-                Margin="0, 90, 0, 0"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.5, 0.85, Autosize, Autosize"
                 Clicked="actionContinue"></Button>
-    </VerticalStackLayout>
+
+    </AbsoluteLayout>
 </ContentPage>

@@ -6,6 +6,7 @@
              NavigationPage.HasNavigationBar="False">
     
     <ScrollView x:Name="scrollMain" 
+                Opacity="0"
                 BackgroundColor="#101010">
         <VerticalStackLayout>
 

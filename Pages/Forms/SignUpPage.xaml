@@ -5,7 +5,9 @@
              Title="SignUpPage"
              NavigationPage.HasNavigationBar="False">
     
-    <ScrollView BackgroundColor="#101010">
+    <ScrollView x:Name="scrollMain"
+                Opacity="0"
+                BackgroundColor="#101010">
         <VerticalStackLayout>
 
             <!-- Sección que contiene el Logo y el Nombre -->
@@ -207,7 +209,8 @@
                    HorizontalOptions="Center"
                    Margin="0, 30, 0, 0"></Label>
 
-            <Button Text="Puedes iniciar sesión aquí."
+            <Button x:Name="btnGoToLoginPage" 
+                    Text="Puedes iniciar sesión aquí."
                     TextColor="#D090F0"
                     FontSize="16"
                     FontFamily="OverpassRegular"

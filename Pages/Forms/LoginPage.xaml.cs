@@ -12,7 +12,13 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
 
         ApplyThemeColors();
-	}
+
+        PlayFadeInAnimation();
+    }
+    private void PlayFadeInAnimation()
+    {
+        scrollMain.Animate(new FadeInAnimation() { Delay=200 });
+    }
 
     private void ApplyThemeColors()
     {

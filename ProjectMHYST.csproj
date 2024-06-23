@@ -98,6 +98,7 @@
 	  <None Remove="Resources\Images\Profile\profile_5.svg" />
 	  <None Remove="Resources\Images\Profile\profile_6.svg" />
 	  <None Remove="Resources\Images\StartPage\start_ilustration.svg" />
+	  <None Remove="Resources\Images\Subjects\Algebra\pascals_triangle.svg" />
 	  <None Remove="Resources\Splash\splash.svg" />
 	  <None Remove="Resources\Subjects\Icons\subject_icon_algebra.svg" />
 	  <None Remove="Resources\Subjects\Icons\subject_icon_analytic_geometry.svg" />
@@ -137,6 +138,7 @@
 	  <MauiImage Include="Resources\Images\Profile\profile_5.svg" />
 	  <MauiImage Include="Resources\Images\Profile\profile_6.svg" />
 	  <MauiImage Include="Resources\Images\StartPage\start_ilustration.svg" />
+	  <MauiImage Include="Resources\Images\Subjects\Algebra\pascals_triangle.svg" />
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_algebra.svg" />
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_analytic_geometry.svg" />
 	  <MauiImage Include="Resources\Subjects\Icons\subject_icon_calculus.svg" />
@@ -162,6 +164,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Start\StartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Subjects\Algebra\Algebra_PascalsTrianglePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Subjects\ContentViews\ExampleView.xaml">

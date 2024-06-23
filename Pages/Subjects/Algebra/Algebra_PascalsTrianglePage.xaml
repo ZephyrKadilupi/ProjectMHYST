@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMHYST.Pages.Subjects.Algebra.Algebra_PascalsTrianglePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout x:Name="stackMain"
+                         Opacity="0">
+        <Border x:Name="borderTitleContainer"
+                Margin="60, 60, 60, 40"
+                Padding="0, 10, 0, 15">
+            <VerticalStackLayout>
+                <Label Text="Temas de Álgebra"
+                       FontFamily="OverpassLight"
+                       FontSize="16"
+                       TextColor="#ffffff"
+                       HorizontalOptions="Center"
+                       Margin="0, 0, 0, -10"></Label>
+
+                <Label Text="Triángulo de Pascal"
+                       FontFamily="LexendLight"
+                       FontSize="26"
+                       TextColor="#ffffff"
+                       HorizontalOptions="Center"
+                       Margin="0, 0, 0, 0" />
+            </VerticalStackLayout>
+        </Border>
+
+        
+        <Image Source="pascals_triangle.svg"
+               WidthRequest="250"
+               Margin="0, 30, 0, 30"></Image>
+
+        <Label Text="Escribe la ecuación aquí:"
+               FontFamily="OverpassLight"
+               FontSize="14"
+               TextColor="#ffffff"
+               HorizontalOptions="Center"></Label>
+        
+        <!--Sección que Recibe Datos-->
+        <HorizontalStackLayout HorizontalOptions="Center"
+                               Margin="0, 0, 0, 0">
+            <Label Text="("
+                   FontFamily="LexendLight"
+                   FontSize="30"
+                   TextColor="#ffffff"></Label>
+            
+            <Entry x:Name="entryNumber1" 
+                   MaxLength="1"
+                   Text=""
+                   FontFamily="LexendLight"
+                   FontSize="18"
+                   TextColor="#ffffff"
+                   HorizontalTextAlignment="Center"></Entry>
+
+            <Label Text="+"
+                   FontFamily="LexendLight"
+                   FontSize="30"
+                   TextColor="#ffffff"></Label>
+
+            <Entry x:Name="entryNumber2" 
+                   MaxLength="1"
+                   Text=""
+                   FontFamily="LexendLight"
+                   FontSize="18"
+                   TextColor="#ffffff"
+                   HorizontalTextAlignment="Center"></Entry>
+
+            <Label Text=")"
+                   FontFamily="LexendLight"
+                   FontSize="30"
+                   TextColor="#ffffff"></Label>
+
+            <Label Text="^"
+                   FontFamily="LexendLight"
+                   FontSize="30"
+                   TextColor="#ffffff"></Label>
+
+            <Entry x:Name="entryExponent" 
+                   MaxLength="1"
+                   Text=""
+                   FontFamily="LexendLight"
+                   FontSize="18"
+                   TextColor="#ffffff"
+                   HorizontalTextAlignment="Center"></Entry>
+        </HorizontalStackLayout>
+
+        <Button Text="Calcular"
+                FontFamily="OverpassLight"
+                FontSize="16"
+                TextColor="#fff"
+                BorderColor="#30f0f0f0"
+                BorderWidth="1"
+                BackgroundColor="Transparent"
+                WidthRequest="150"
+                Margin="0, 30, 0, 0"></Button>
+
+        <HorizontalStackLayout HorizontalOptions="Center"
+                               Opacity="1"
+                               Margin="0, 30, 0, 0">
+            <ImageButton x:Name="imgCat"
+                         Source="cat_normal_w.svg"
+                         WidthRequest="120"
+                         HeightRequest="120"
+                         VerticalOptions="Center"
+                         Margin="0, 0, -10, 10"></ImageButton>
+
+            <Label x:Name="lbDialogue"
+                   Text="—Esto que ves aquí arriba es un Triángulo de Pascal. Sirve para desarrollar binomios con potencias arbitrarias."
+                   TextColor="#ffffff"
+                   FontSize="14"
+                   FontFamily="OverpassSemibold"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Padding="5, 0, 5, 0"></Label>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
