@@ -5,7 +5,7 @@
              x:Class="ProjectMHYST.Pages.Start.StartPage"
              Title="StartPage"
              NavigationPage.HasNavigationBar="False"
-             Appearing="triggerStartAnimations">
+             Appearing="OnStart">
 
     <AbsoluteLayout x:Name="layoutMain"
                     BackgroundColor="#000000"

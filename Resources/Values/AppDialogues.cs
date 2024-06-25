@@ -20,14 +20,14 @@ namespace ProjectMHYST.Resources.Values
                     dialogues = [
                     "—¡Has llegado! Me temo que tienes mucho por aprender, ¿o no?",
                     "*Suspiro*",
-                    "—¿Sabes como usar la interfaz?",
+                    "—¿Sabes cómo usar la interfaz?",
                     "—Se supone que debería ser muy intuitiva y todo, pero con MAUI, la más mínima animación tarda dos horas en mostrarse.",
                     "—El simple hecho de que pueda hablar ahora mismo sin trabarme es un milagro...",
                     "—Pero bueno, en esencia, todo lo importante se encuentra en la barra lateral.",
-                    "—En la parte de arriba está tu foto de perfil, si clickeas encima puedes cambiarla.",
-                    "—Además, en ese menú, también puedes cambiar la paleta de colores, y otras cosas.",
-                    "—Abajo de eso están las asignaturas, si clickeas en el ícono verás una lista de temas.",
-                    "—Cuando veas la lista de temas, y clickes en uno de ellos, irás a un solucionador.",
+                    "—En la parte de arriba está tu foto de perfil, si entras ahí puedes cambiarla.",
+                    "—Además, en ese menú, también puedes cambiar la paleta de colores y otras cosas.",
+                    "—Abajo de eso están las asignaturas, si tocas en el ícono verás una lista de temas.",
+                    "—Cuando veas la lista de temas, y selecciones uno de ellos, irás a un solucionador.",
                     "—Y ahí mismo intentaremos, LOS DOS, resolver el problema, ¿Ok?",
                     "—Eso es todo, puedes irte."
                     ];

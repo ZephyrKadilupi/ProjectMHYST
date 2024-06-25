@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMHYST.Pages.Forms.SignUpPage_After"
+             Title="SignUpPage_After"
+             NavigationPage.HasNavigationBar="False">
+
+    <AbsoluteLayout x:Name="stackMain">
+        <!-- Sección que contiene el Logo y el Nombre -->
+        <FlexLayout x:Name="flexLogo"
+                    JustifyContent="Center"
+                    Opacity="0"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.05, Autosize, Autosize">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image Source="mhyst_w.svg"
+                       WidthRequest="60"
+                       HeightRequest="60"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"></Image>
+
+                <Label Text="MHYST"
+                       TextColor="#ffffff"
+                       FontSize="14"
+                       FontFamily="MontserratAlternatesMedium"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Margin="10, 0, 0, 0"></Label>
+            </HorizontalStackLayout>
+        </FlexLayout>
+
+        <Border x:Name="borderCircle"
+                StrokeShape="Ellipse"
+                Stroke="Transparent"
+                Opacity="0"
+                WidthRequest="350"
+                HeightRequest="350"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.5, 0.47, Autosize, Autosize" />
+
+        <Border x:Name="borderCircleDeco1"
+                StrokeShape="Ellipse"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.85, 0.25, 150, 150"></Border>
+
+        <Border x:Name="borderCircleDeco2"
+                StrokeShape="Ellipse"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.3, 0.55, 80, 80"></Border>
+
+        <Border x:Name="borderCircleDeco3"
+                StrokeShape="Ellipse"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.15, 0.65, 50, 50"></Border>
+
+        <VerticalStackLayout x:Name="stackContainerLabel"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Opacity="1"
+                             AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0.5, 0.46">
+
+            <Label x:Name="lbSuccess"
+                   Text="Registro Exitoso"
+                   FontSize="34"
+                   FontFamily="LexendMedium"
+                   TextColor="#FFFFFF"
+                   HorizontalTextAlignment="Center"
+                   Opacity="0"/>
+        </VerticalStackLayout>
+
+        <!-- Botón de Continuar -->
+        <Button x:Name="btnContinue"
+                Text="Continuar"
+                TextColor="#FFFFFF"
+                TextTransform="Uppercase"
+                FontFamily="OverpassSemibold"
+                FontSize="16"
+                BackgroundColor="Transparent"
+                WidthRequest="180"
+                BorderColor="#FFFFFF"
+                BorderWidth="1"
+                Opacity="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.5, 0.85, Autosize, Autosize"
+                Clicked="actionContinue"></Button>
+
+    </AbsoluteLayout>
+</ContentPage>

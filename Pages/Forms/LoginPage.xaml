@@ -63,7 +63,7 @@
                        FontSize="24"
                        Placeholder="Usuario"
                        Margin="-8, -10, 0, 0"
-                       TextChanged="updateEntryValues"></Entry>
+                       TextChanged="UpdateEntryValues"></Entry>
             </VerticalStackLayout>
 
 
@@ -83,11 +83,11 @@
                        Placeholder="Contraseña"
                        IsPassword="True"
                        Margin="-8, -10, 0, 0"
-                       TextChanged="updateEntryValues"></Entry>
+                       TextChanged="UpdateEntryValues"></Entry>
             </VerticalStackLayout>
 
             <!-- Botón de Iniciar Sesión -->
-            <Button x:Name="btnLogIn"
+            <Button x:Name="btnLogin"
                     Text="Iniciar Sesión"
                     TextColor="#FFFFFF"
                     TextTransform="Uppercase"
@@ -99,7 +99,7 @@
                     BorderWidth="1"
                     Margin="0, 60, 0, 0"
                     IsEnabled="False"
-                    Clicked="goToAfterPage"></Button>
+                    Clicked="TryLogin"></Button>
 
             <!-- Sugerencias: ¿Aún no tienes una cuenta? -->
             <Label Text="¿Aún no tienes una cuenta en MHYST?"
@@ -115,7 +115,7 @@
                     FontFamily="OverpassRegular"
                     BackgroundColor="Transparent"
                     Margin="0, -10, 0, 0"
-                    Clicked="goToSignUpPage"></Button>
+                    Clicked="GoToSignUpPage"></Button>
 
         </VerticalStackLayout>
     </ScrollView>

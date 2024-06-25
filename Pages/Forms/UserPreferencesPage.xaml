@@ -461,8 +461,8 @@
                              Grid.Column="0"
                              Grid.ColumnSpan="2"></BoxView>
 
-                    <Button x:Name="btnUpdateInfo" 
-                            Text="Actualizar Datos Personales"
+                    <Button x:Name="btnLogOut" 
+                            Text="Cerrar Sesión"
                             TextColor="#96f"
                             FontSize="16"
                             FontFamily="LexendLight"
@@ -470,7 +470,8 @@
                             VerticalOptions="Center"
                             Background="Transparent"
                             Grid.Row="0"
-                            Grid.Column="2"></Button>
+                            Grid.Column="2"
+                            Clicked="LogOut"></Button>
 
                 </Grid>
             </VerticalStackLayout>

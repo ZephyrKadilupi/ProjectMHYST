@@ -1,12 +1,10 @@
-using AlohaKit.Animations;
+﻿using AlohaKit.Animations;
 using ProjectMHYST.Resources.Values;
 
 namespace ProjectMHYST.Pages.Forms;
 
 public partial class LoginPage : ContentPage
 {
-    String user = "", password = "";
-
     public LoginPage()
 	{
 		InitializeComponent();
@@ -30,21 +28,34 @@ public partial class LoginPage : ContentPage
         btnGoToSignUp.TextColor = selectedThemeColors[2];
     }
 
-    public void goToSignUpPage(object sender, EventArgs e)
+    public void GoToSignUpPage(object sender, EventArgs e)
     {
         Navigation.PushAsync(new SignUpPage());
     }
 
-    public void updateEntryValues(object sender, EventArgs e)
+    public void UpdateEntryValues(object sender, EventArgs e)
     {
-        user = entryUser.Text;
-        password = entryPassword.Text;
+        string user = entryUser.Text;
+        string password = entryPassword.Text;
 
-        btnLogIn.IsEnabled = !(user == "" || password == "");
+        btnLogin.IsEnabled = user != "" && password != "";
     }
 
-    public void goToAfterPage(object sender, EventArgs e)
+    public async void TryLogin(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new LoginPage_After(user));
+        string user = entryUser.Text;
+        string password = entryPassword.Text;
+        bool result = Convert.ToString(await SecureStorage.Default.GetAsync(user)) == password;
+
+        if (result)
+        {
+            await SecureStorage.SetAsync("oauth_token", user);
+            await Navigation.PushAsync(new LoginPage_After(user));
+        }
+        else
+        {
+            string message = "Los datos introducidos no son correctos, por favor inténtelo de nuevo.";
+            await DisplayAlert("Usuario o Contraseña Incorrectos", message, "Ok");
+        }
     }
 }

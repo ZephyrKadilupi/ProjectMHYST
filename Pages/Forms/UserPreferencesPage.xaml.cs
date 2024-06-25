@@ -1,3 +1,4 @@
+using ProjectMHYST.Pages.Start;
 using ProjectMHYST.Resources.Values;
 
 namespace ProjectMHYST.Pages.Forms;
@@ -28,7 +29,7 @@ public partial class UserPreferencesPage : ContentPage
 
         gridMain.BackgroundColor = selectedThemeColors[1];
         lbExtraInfo.TextColor = selectedThemeColors[2];
-        btnUpdateInfo.TextColor = selectedThemeColors[2];
+        btnLogOut.TextColor = selectedThemeColors[2];
         lbProfilePicTip.TextColor = selectedThemeColors[2];
         lbColorThemeTip.TextColor = selectedThemeColors[2];
     }
@@ -310,5 +311,11 @@ public partial class UserPreferencesPage : ContentPage
     private void ShowColorThemeTip()
     {
         lbColorThemeTip.IsVisible = true;
+    }
+
+    private async void LogOut(object sender, EventArgs e)
+    {
+        SecureStorage.Default.Remove("oauth_token");
+        await Navigation.PopToRootAsync();
     }
 }

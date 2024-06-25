@@ -66,6 +66,13 @@
                        Placeholder="Nombre"
                        Margin="-8, -12, 0, 0"
                        TextChanged="updateEntryValues"></Entry>
+
+                <Label x:Name="lbNameTip"
+                       FontSize="14"
+                       FontFamily="OverpassLight"
+                       HorizontalTextAlignment="End"
+                       TextColor="#FFFFFF"
+                       Margin="0, -8, 0, -8"></Label>
             </VerticalStackLayout>
 
 
@@ -87,6 +94,13 @@
                        Placeholder="username123"
                        Margin="-8, -12, 0, 0"
                        TextChanged="updateEntryValues"></Entry>
+
+                <Label x:Name="lbUserTip"
+                       FontSize="14"
+                       FontFamily="OverpassLight"
+                       HorizontalTextAlignment="End"
+                       TextColor="#FFFFFF"
+                       Margin="0, -8, 0, -8"></Label>
             </VerticalStackLayout>
 
 
@@ -108,6 +122,13 @@
                        Placeholder="abc@gmail.com"
                        Margin="-8, -12, 0, 0"
                        TextChanged="updateEntryValues"></Entry>
+
+                <Label x:Name="lbEmailTip"
+                       FontSize="14"
+                       FontFamily="OverpassLight"
+                       HorizontalTextAlignment="End"
+                       TextColor="#FFFFFF"
+                       Margin="0, -8, 0, -8"></Label>
             </VerticalStackLayout>
 
             <!-- Sección del Cuarto Input: Teléfono -->
@@ -128,6 +149,13 @@
                        Placeholder="311 123 4567"
                        Margin="-8, -12, 0, 0"
                        TextChanged="updateEntryValues"></Entry>
+
+                <Label x:Name="lbTelTip"
+                       FontSize="14"
+                       FontFamily="OverpassLight"
+                       HorizontalTextAlignment="End"
+                       TextColor="#FFFFFF"
+                       Margin="0, -8, 0, -8"></Label>
             </VerticalStackLayout>
 
             <!-- Sección del Quinto Input: Contraseña (INICIA ESCONDIDO)-->
@@ -149,7 +177,14 @@
                        Placeholder="Contraseña"
                        IsPassword="True"
                        Margin="-8, -12, 0, 0"
-                       TextChanged="validatePassword"></Entry>
+                       TextChanged="updateEntryValues"></Entry>
+
+                <Label x:Name="lbPasswordTip"
+                       FontSize="14"
+                       FontFamily="OverpassLight"
+                       HorizontalTextAlignment="End"
+                       TextColor="#FFFFFF"
+                       Margin="0, -8, 0, -8"></Label>
             </VerticalStackLayout>
 
             <!-- Sección del Sexto Input: Confirmar Contraseña (INICIA ESCONDIDO) -->
@@ -171,7 +206,14 @@
                        Placeholder="Confirmar Contraseña"
                        IsPassword="True"
                        Margin="-8, -12, 0, 0"
-                       TextChanged="validatePassword"></Entry>
+                       TextChanged="updateEntryValues"></Entry>
+
+                <Label x:Name="lbCPasswordTip"
+                       FontSize="14"
+                       FontFamily="OverpassLight"
+                       HorizontalTextAlignment="End"
+                       TextColor="#FFFFFF"
+                       Margin="0, -8, 0, -8"></Label>
             </VerticalStackLayout>
 
             <!-- Botón de Siguiente -->

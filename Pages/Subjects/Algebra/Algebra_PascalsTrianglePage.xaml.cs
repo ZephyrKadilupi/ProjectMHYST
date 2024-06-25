@@ -23,6 +23,7 @@ public partial class Algebra_PascalsTrianglePage : ContentPage
         stackMain.BackgroundColor = selectedThemeColors[1];
         borderTitleContainer.Stroke = selectedThemeColors[2];
         borderTitleContainer.BackgroundColor = selectedThemeColors[0];
+        borderSolutionStep1.BackgroundColor = selectedThemeColors[1];
     }
 
     private void PlayFadeInAnimation()

@@ -26,7 +26,7 @@
             </VerticalStackLayout>
         </Border>
 
-        
+
         <Image Source="pascals_triangle.svg"
                WidthRequest="250"
                Margin="0, 30, 0, 30"></Image>
@@ -36,7 +36,7 @@
                FontSize="14"
                TextColor="#ffffff"
                HorizontalOptions="Center"></Label>
-        
+
         <!--Sección que Recibe Datos-->
         <HorizontalStackLayout HorizontalOptions="Center"
                                Margin="0, 0, 0, 0">
@@ -44,8 +44,8 @@
                    FontFamily="LexendLight"
                    FontSize="30"
                    TextColor="#ffffff"></Label>
-            
-            <Entry x:Name="entryNumber1" 
+
+            <Entry x:Name="entryNumber1"
                    MaxLength="1"
                    Text=""
                    FontFamily="LexendLight"
@@ -58,7 +58,7 @@
                    FontSize="30"
                    TextColor="#ffffff"></Label>
 
-            <Entry x:Name="entryNumber2" 
+            <Entry x:Name="entryNumber2"
                    MaxLength="1"
                    Text=""
                    FontFamily="LexendLight"
@@ -76,7 +76,7 @@
                    FontSize="30"
                    TextColor="#ffffff"></Label>
 
-            <Entry x:Name="entryExponent" 
+            <Entry x:Name="entryExponent"
                    MaxLength="1"
                    Text=""
                    FontFamily="LexendLight"
@@ -94,6 +94,35 @@
                 BackgroundColor="Transparent"
                 WidthRequest="150"
                 Margin="0, 30, 0, 0"></Button>
+
+         <VerticalStackLayout x:Name="stackSolutionStepsContainer">
+             
+            <Border x:Name="borderSolutionStep1"
+                    WidthRequest="300"
+                    StrokeShape="RoundRectangle 10"
+                    HorizontalOptions="Center"
+                    Margin="40, 10, 40, 10"
+                    Padding="20, 10">
+                <VerticalStackLayout x:Name="stackSolutionStep1">
+                    <!--Stroke and BackgroundColor will be defined by the method that creates the Steps.-->
+                    <Label x:Name="flexSolutionStepExample_Title"
+                           Text="Paso 1"
+                           FontSize="16"
+                           FontFamily="LexendLight"
+                           HorizontalOptions="Center" />
+
+                    <BoxView WidthRequest="250"
+                             HeightRequest="1"
+                             BackgroundColor="#50FFFFFF" />
+
+                    <Label x:Name="lbSolution1"
+                           Text="AAAAA"></Label>
+                </VerticalStackLayout>
+            </Border>
+             
+             <!-- Acá se añaden los pasos mediante el código. -->
+             
+        </VerticalStackLayout>
 
         <HorizontalStackLayout HorizontalOptions="Center"
                                Opacity="1"

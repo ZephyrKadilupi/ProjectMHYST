@@ -7,12 +7,14 @@ namespace ProjectMHYST.Pages.Start;
 
 public partial class StartPage : ContentPage
 {
-	public StartPage()
-	{
-		InitializeComponent();
+    public StartPage()
+    {
+        InitializeComponent();
 
         ApplyThemeColors();
-	}
+    }
+
+    bool already_animated = false;
 
     private void ApplyThemeColors()
     {
@@ -24,77 +26,100 @@ public partial class StartPage : ContentPage
         borderCircleIllustration.BackgroundColor = selectedThemeColors[0];
     }
 
-    public async void goToLoginPage(Object sender, EventArgs e)
+    private async void OnStart(object sender, EventArgs e)
+    {
+        bool logged = await SecureStorage.Default.GetAsync("oauth_token") != null;
+
+        if (imgMhyst.Opacity == 0) already_animated = false;
+
+        /*
+         * En Resumen: SecureStorage guarda un string en una localización que tiene un nombre justo de
+         * la misma manera que Preferences, solo con la diferencia de que SecureStorage.Default.Set()
+         * no te permite retornar un valor en caso de que la localización no tenga ningún valor asociado...
+         * 
+         * Acá se usa para buscar si en la localización "oauth_token" ya existe un valor, si no existe,
+         * entonces será null y el boolean será false, en caso contrario, true.
+         * 
+         * Esa localización contendrá el usuario de la persona (aunque lo ideal sería colocar un código
+         * personalizado generado automáticamente).
+         */
+
+        if (!already_animated)
+        {
+            //Ejecutar las animaciones una detrás de otra.
+            await imgTeam.Animate(new FadeToAnimation()
+            {
+                Delay = 3000,
+                Duration = "1000",
+                Opacity = 1
+            });
+            await imgTeam.Animate(new FadeToAnimation()
+            {
+                Delay = 1000,
+                Duration = "1000",
+                Opacity = 0
+            });
+
+            if (logged) already_animated = true;
+        }
+
+        if (!logged) //Si el usuario no está loggeado
+        { //Muestra los botones de Registrarse/Iniciar Sesión
+            if (!already_animated) 
+            { 
+                await imgMhyst.Animate(new FadeToAnimation()
+                {
+                    Duration = "500",
+                    Opacity = 1
+                });
+
+                await lbMhyst.Animate(new FadeToAnimation()
+                {
+                    Duration = "500",
+                    Opacity = 1
+                });
+
+                await borderCircleIllustration.Animate(new FadeToAnimation()
+                {
+                    Duration = "500",
+                    Opacity = 0.3
+                });
+
+                await imgIllustration.Animate(new FadeToAnimation()
+                {
+                    Duration = "500",
+                    Opacity = 1
+                });
+
+                await btnLogin.Animate(new FadeToAnimation()
+                {
+                    Duration = "500",
+                    Opacity = 1
+                });
+
+                await btnSignUp.Animate(new FadeToAnimation()
+                {
+                    Duration = "500",
+                    Opacity = 1
+                });
+
+                already_animated = true;
+            }       
+        }
+        else
+        { //Si ya lo está, lo lleva a la página de temas
+            await Navigation.PushAsync(new Subjects.PrincipalSubjectListPage());
+        }
+    }
+
+    private async void goToLoginPage(Object sender, EventArgs e)
     {
         await Navigation.PushAsync(new LoginPage());
     }
 
-    public async void goToSignUpPage(Object sender, EventArgs e)
+    private async void goToSignUpPage(Object sender, EventArgs e)
     {
         await Navigation.PushAsync(new SignUpPage());
-    }
-
-    public async void triggerStartAnimations(object sender, EventArgs e)
-    {
-        //Fade In para el Logo y el Texto
-        FadeToAnimation Mhyst_FadeToAnimation = new()
-        {
-            Duration = "500",
-            Opacity = 1
-        };
-
-        //Fade In & Out para el Logo de los Gaznápiros
-        FadeToAnimation imgTeam_FadeInAnimation = new()
-        {
-            Delay = 4000,
-            Duration = "1000",
-            Opacity = 1
-        };
-
-        FadeToAnimation imgTeam_FadeOutAnimation = new()
-        {
-            Delay = 1000,
-            Duration = "1000",
-            Opacity = 0
-        };
-
-        //Fade In para los botones
-        FadeToAnimation btnLogin_FadeInAnimation = new()
-        {
-            Duration = "500",
-            Opacity = 1
-        };
-
-        FadeToAnimation btnSignUp_FadeInAnimation = new()
-        {
-            Duration = "500",
-            Opacity = 1
-        };
-
-        //Fade In para la Ilustración
-
-        FadeToAnimation imgIllustration_FadeInAnimation = new()
-        {
-            Duration = "500",
-            Opacity = 1
-        };
-
-        FadeToAnimation borderCircleAnimation_FadeInAnimation = new()
-        {
-            Duration = "500",
-            Opacity = 0.3
-        };
-
-        //Ejecutar las animaciones una detrás de otra.
-        await imgTeam.Animate(imgTeam_FadeInAnimation);
-        await imgTeam.Animate(imgTeam_FadeOutAnimation);
-
-        await imgMhyst.Animate(Mhyst_FadeToAnimation);
-        await lbMhyst.Animate(Mhyst_FadeToAnimation);
-        await borderCircleIllustration.Animate(borderCircleAnimation_FadeInAnimation);
-        await imgIllustration.Animate(imgIllustration_FadeInAnimation);
-        await btnLogin.Animate(btnLogin_FadeInAnimation);
-        await btnSignUp.Animate(btnSignUp_FadeInAnimation);
     }
 
     private async void ResetFlags(object sender, EventArgs e)
