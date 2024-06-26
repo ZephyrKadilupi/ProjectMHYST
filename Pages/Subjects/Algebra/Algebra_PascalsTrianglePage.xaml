@@ -2,148 +2,440 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectMHYST.Pages.Subjects.Algebra.Algebra_PascalsTrianglePage"
-             NavigationPage.HasNavigationBar="False">
+             x:Name="contentPageMain"
+             NavigationPage.HasNavigationBar="False"
+             SizeChanged="OnOrientationChange">
 
-    <VerticalStackLayout x:Name="stackMain"
-                         Opacity="0">
-        <Border x:Name="borderTitleContainer"
-                Margin="60, 60, 60, 40"
-                Padding="0, 10, 0, 15">
-            <VerticalStackLayout>
-                <Label Text="Temas de Álgebra"
-                       FontFamily="OverpassLight"
-                       FontSize="16"
-                       TextColor="#ffffff"
-                       HorizontalOptions="Center"
-                       Margin="0, 0, 0, -10"></Label>
-
-                <Label Text="Triángulo de Pascal"
-                       FontFamily="LexendLight"
-                       FontSize="26"
-                       TextColor="#ffffff"
-                       HorizontalOptions="Center"
-                       Margin="0, 0, 0, 0" />
-            </VerticalStackLayout>
-        </Border>
-
-
-        <Image Source="pascals_triangle.svg"
-               WidthRequest="250"
-               Margin="0, 30, 0, 30"></Image>
-
-        <Label Text="Escribe la ecuación aquí:"
-               FontFamily="OverpassLight"
-               FontSize="14"
-               TextColor="#ffffff"
-               HorizontalOptions="Center"></Label>
-
-        <!--Sección que Recibe Datos-->
-        <HorizontalStackLayout HorizontalOptions="Center"
-                               Margin="0, 0, 0, 0">
-            <Label Text="("
-                   FontFamily="LexendLight"
-                   FontSize="30"
-                   TextColor="#ffffff"></Label>
-
-            <Entry x:Name="entryNumber1"
-                   MaxLength="1"
-                   Text=""
-                   FontFamily="LexendLight"
-                   FontSize="18"
-                   TextColor="#ffffff"
-                   HorizontalTextAlignment="Center"></Entry>
-
-            <Label Text="+"
-                   FontFamily="LexendLight"
-                   FontSize="30"
-                   TextColor="#ffffff"></Label>
-
-            <Entry x:Name="entryNumber2"
-                   MaxLength="1"
-                   Text=""
-                   FontFamily="LexendLight"
-                   FontSize="18"
-                   TextColor="#ffffff"
-                   HorizontalTextAlignment="Center"></Entry>
-
-            <Label Text=")"
-                   FontFamily="LexendLight"
-                   FontSize="30"
-                   TextColor="#ffffff"></Label>
-
-            <Label Text="^"
-                   FontFamily="LexendLight"
-                   FontSize="30"
-                   TextColor="#ffffff"></Label>
-
-            <Entry x:Name="entryExponent"
-                   MaxLength="1"
-                   Text=""
-                   FontFamily="LexendLight"
-                   FontSize="18"
-                   TextColor="#ffffff"
-                   HorizontalTextAlignment="Center"></Entry>
-        </HorizontalStackLayout>
-
-        <Button Text="Calcular"
-                FontFamily="OverpassLight"
-                FontSize="16"
-                TextColor="#fff"
-                BorderColor="#30f0f0f0"
-                BorderWidth="1"
-                BackgroundColor="Transparent"
-                WidthRequest="150"
-                Margin="0, 30, 0, 0"></Button>
-
-         <VerticalStackLayout x:Name="stackSolutionStepsContainer">
-             
-            <Border x:Name="borderSolutionStep1"
-                    WidthRequest="300"
-                    StrokeShape="RoundRectangle 10"
-                    HorizontalOptions="Center"
-                    Margin="40, 10, 40, 10"
-                    Padding="20, 10">
-                <VerticalStackLayout x:Name="stackSolutionStep1">
-                    <!--Stroke and BackgroundColor will be defined by the method that creates the Steps.-->
-                    <Label x:Name="flexSolutionStepExample_Title"
-                           Text="Paso 1"
+    <ScrollView x:Name="scrollMain">
+        <VerticalStackLayout x:Name="stackMain"
+                             Opacity="0">
+            <Border x:Name="borderTitleContainer"
+                    Margin="60, 60, 60, 40"
+                    Padding="0, 10, 0, 15">
+                <VerticalStackLayout>
+                    <Label Text="Temas de Álgebra"
+                           FontFamily="OverpassLight"
                            FontSize="16"
+                           TextColor="#ffffff"
+                           HorizontalOptions="Center"
+                           Margin="0, 0, 0, -10"></Label>
+
+                    <Label Text="Triángulo de Pascal"
                            FontFamily="LexendLight"
-                           HorizontalOptions="Center" />
-
-                    <BoxView WidthRequest="250"
-                             HeightRequest="1"
-                             BackgroundColor="#50FFFFFF" />
-
-                    <Label x:Name="lbSolution1"
-                           Text="AAAAA"></Label>
+                           FontSize="26"
+                           TextColor="#ffffff"
+                           HorizontalOptions="Center"
+                           Margin="0, 0, 0, 0" />
                 </VerticalStackLayout>
             </Border>
-             
-             <!-- Acá se añaden los pasos mediante el código. -->
-             
-        </VerticalStackLayout>
 
-        <HorizontalStackLayout HorizontalOptions="Center"
-                               Opacity="1"
-                               Margin="0, 30, 0, 0">
-            <ImageButton x:Name="imgCat"
-                         Source="cat_normal_w.svg"
-                         WidthRequest="120"
-                         HeightRequest="120"
-                         VerticalOptions="Center"
-                         Margin="0, 0, -10, 10"></ImageButton>
 
-            <Label x:Name="lbDialogue"
-                   Text="—Esto que ves aquí arriba es un Triángulo de Pascal. Sirve para desarrollar binomios con potencias arbitrarias."
-                   TextColor="#ffffff"
+            <Image Source="pascals_triangle.svg"
+                   WidthRequest="250"
+                   Margin="0, 30, 0, 30"></Image>
+
+            <!--DESCRIPCIÓN DEL TEMA-->
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                   Opacity="1"
+                                   Margin="0, 0, 0, 20">
+                <ImageButton x:Name="imgCatDesc"
+                             Source="cat_normal_w.svg"
+                             WidthRequest="100"
+                             HeightRequest="100"
+                             VerticalOptions="Center"
+                             Margin="0, 0, -10, 10"></ImageButton>
+
+                <Label x:Name="lbDialogueDesc"
+                       Text="—Esto que ves aquí arriba es un Triángulo de Pascal. Sirve para desarrollar binomios con potencias arbitrarias."
+                       TextColor="#ffffff"
+                       FontSize="13"
+                       FontFamily="OverpassSemibold"
+                       LineBreakMode="WordWrap"
+                       VerticalOptions="Start"
+                       WidthRequest="200"
+                       Margin="0, 10, 0, 0"
+                       Padding="5, 0, 5, 0"></Label>
+            </HorizontalStackLayout>
+
+            <Label Text="Escribe la ecuación aquí:"
+                   FontFamily="OverpassLight"
                    FontSize="14"
-                   FontFamily="OverpassSemibold"
-                   WidthRequest="200"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   Padding="5, 0, 5, 0"></Label>
-        </HorizontalStackLayout>
+                   TextColor="#ffffff"
+                   HorizontalOptions="Center"></Label>
 
-    </VerticalStackLayout>
+            <!--SECCIÓN QUE RECIBE LA ECUACIÓN-->
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                   Margin="0, 0, 0, 0">
+                <Label Text="("
+                       FontFamily="LexendLight"
+                       FontSize="30"
+                       TextColor="#ffffff"></Label>
+
+                <Entry x:Name="entryNumber1"
+                       MaxLength="1"
+                       Text=""
+                       FontFamily="LexendLight"
+                       FontSize="18"
+                       TextColor="#ffffff"
+                       HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="+"
+                       FontFamily="LexendLight"
+                       FontSize="30"
+                       TextColor="#ffffff"></Label>
+
+                <Entry x:Name="entryNumber2"
+                       MaxLength="1"
+                       Text=""
+                       FontFamily="LexendLight"
+                       FontSize="18"
+                       TextColor="#ffffff"
+                       HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text=")"
+                       FontFamily="LexendLight"
+                       FontSize="30"
+                       TextColor="#ffffff"></Label>
+
+                <Label Text="^"
+                       FontFamily="LexendLight"
+                       FontSize="30"
+                       TextColor="#ffffff"></Label>
+
+                <Entry x:Name="entryExponent"
+                       MaxLength="1"
+                       Text=""
+                       FontFamily="LexendLight"
+                       FontSize="18"
+                       TextColor="#ffffff"
+                       HorizontalTextAlignment="Center"></Entry>
+            </HorizontalStackLayout>
+
+            <Button x:Name="btnCalculate" 
+                    Text="Calcular"
+                    FontFamily="OverpassLight"
+                    FontSize="16"
+                    TextColor="#fff"
+                    BorderColor="#30f0f0f0"
+                    BorderWidth="1"
+                    BackgroundColor="Transparent"
+                    WidthRequest="150"
+                    Margin="0, 30, 0, 0"
+                    Clicked="StartAnswer"></Button>
+
+            <Label x:Name="lbScreenOrientationTip" 
+                   Text="Puede girar la pantalla para una mejor visualización."
+                   FontSize="13"
+                   FontFamily="OverpassLight"
+                   HorizontalOptions="Center"
+                   Margin="0, 20"
+                   IsVisible="False"></Label>
+
+            
+            <!--SECCIÓN CON LOS PASOS-->
+            <VerticalStackLayout x:Name="stackSolutionStepsContainer"
+                                 Margin="0, 40, 0, 0">
+
+                <!--Estos Border contienen una plantilla del paso que se mostrará. Al presionar el botón
+                se vuelven visibles y un método les asigna el valor correspondiente a la solución.-->
+                
+                <!--PASO 1: CREAR EL TRIÁNGULO DE PASCAL-->
+                <Border x:Name="borderSolutionStep1"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="Transparent"
+                        HorizontalOptions="Fill"
+                        MaximumWidthRequest="600"
+                        Margin="40, 10, 40, 10"
+                        Padding="20"
+                        IsVisible="False">
+                    <VerticalStackLayout x:Name="stackSolutionStep1">
+                        <Label x:Name="flexSolutionStep1Title"
+                               Text="PASO 1"
+                               FontSize="16"
+                               FontFamily="LexendLight"
+                               HorizontalOptions="Center" />
+
+                        <BoxView x:Name="dividerStep1"
+                                 WidthRequest="260"
+                                 HeightRequest="1"
+                                 BackgroundColor="#50FFFFFF"
+                                 Margin="0, 0, 0, 5" />
+
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Opacity="1"
+                                               Margin="0, 10, 0, 0">
+                            <ImageButton x:Name="imgCatStep1"
+                                         Source="cat_normal_w.svg"
+                                         WidthRequest="100"
+                                         HeightRequest="100"
+                                         VerticalOptions="Center"
+                                         Margin="0, 0, -10, 10"></ImageButton>
+
+                            <Label x:Name="lbDialogueStep1"
+                                   Text="—Primero tienes que armar tu triángulo de pascal dependiendo del exponente. El número de la fila que debes conseguir siempre es igual al exponente más 1."
+                                   TextColor="#ffffff"
+                                   FontSize="13"
+                                   FontFamily="OverpassLight"
+                                   LineBreakMode="WordWrap"
+                                   VerticalOptions="Start"
+                                   WidthRequest="400"
+                                   Margin="0, 10, 0, 0"
+                                   Padding="5, 0, 5, 0"></Label>
+                        </HorizontalStackLayout>
+
+                        <Label Text="En este caso, la fila es la siguiente:"
+                               FontFamily="OverpassLight"
+                               FontSize="13"
+                               HorizontalOptions="Center"
+                               Margin="0, 10, 0, 0"></Label>
+                    </VerticalStackLayout>
+                </Border>
+
+                
+                <!--PASO 2: AGREGAR LOS COEFICIENTES-->
+                <Border x:Name="borderSolutionStep2"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="Transparent"
+                        HorizontalOptions="Fill"
+                        MaximumWidthRequest="600"
+                        Margin="40, 10, 40, 10"
+                        Padding="20"
+                        IsVisible="False">
+                    <VerticalStackLayout x:Name="stackSolutionStep2">
+                        <Label x:Name="flexSolutionStep2Title"
+                               Text="PASO 2"
+                               FontSize="16"
+                               FontFamily="LexendLight"
+                               HorizontalOptions="Center" />
+
+                        <BoxView x:Name="dividerStep2"
+                                 WidthRequest="260"
+                                 HeightRequest="1"
+                                 BackgroundColor="#50FFFFFF"
+                                 Margin="0, 0, 0, 5" />
+
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Opacity="1"
+                                               Margin="0, 10, 0, 0">
+                            <ImageButton x:Name="imgCatStep2"
+                                         Source="cat_normal_w.svg"
+                                         WidthRequest="100"
+                                         HeightRequest="100"
+                                         VerticalOptions="Center"
+                                         Margin="0, 0, -10, 10"></ImageButton>
+
+                            <Label x:Name="lbDialogueStep2"
+                                   Text="—Luego haz una tabla con los valores que obtuvimos antes. En breve les agregaremos más cosas."
+                                   TextColor="#ffffff"
+                                   FontSize="13"
+                                   FontFamily="OverpassLight"
+                                   LineBreakMode="WordWrap"
+                                   VerticalOptions="Start"
+                                   WidthRequest="400"
+                                   Margin="0, 10, 0, 0"
+                                   Padding="5, 0, 5, 0"></Label>
+                        </HorizontalStackLayout>
+
+                        <Label Text="De esta manera:"
+                               FontFamily="OverpassLight"
+                               FontSize="13"
+                               HorizontalOptions="Center"
+                               Margin="0, 10, 0, 0"></Label>
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!--PASO 3: AGREGAR LA X & SUS EXPONENTES-->
+                <Border x:Name="borderSolutionStep3"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="Transparent"
+                        HorizontalOptions="Fill"
+                        MaximumWidthRequest="600"
+                        Margin="40, 10, 40, 10"
+                        Padding="20"
+                        IsVisible="False">
+                    <VerticalStackLayout x:Name="stackSolutionStep3">
+                        <Label x:Name="flexSolutionStep3Title"
+                               Text="PASO 3"
+                               FontSize="16"
+                               FontFamily="LexendLight"
+                               HorizontalOptions="Center" />
+
+                        <BoxView x:Name="dividerStep3"
+                                 WidthRequest="260"
+                                 HeightRequest="1"
+                                 BackgroundColor="#50FFFFFF"
+                                 Margin="0, 0, 0, 5" />
+
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Opacity="1"
+                                               Margin="0, 10, 0, 0">
+                            <ImageButton x:Name="imgCatStep3"
+                                         Source="cat_normal_w.svg"
+                                         WidthRequest="100"
+                                         HeightRequest="100"
+                                         VerticalOptions="Center"
+                                         Margin="0, 0, -10, 10"></ImageButton>
+
+                            <Label x:Name="lbDialogueStep3"
+                                   Text="—Luego agrega el primer valor en cada fila y añade los exponentes de manera descendente. (Recuerda que empiezas con el exponente del binomio)."
+                                   TextColor="#ffffff"
+                                   FontSize="13"
+                                   FontFamily="OverpassLight"
+                                   LineBreakMode="WordWrap"
+                                   VerticalOptions="Start"
+                                   WidthRequest="400"
+                                   Margin="0, 10, 0, 0"
+                                   Padding="5, 0, 5, 0"></Label>
+                        </HorizontalStackLayout>
+
+                        <Label Text="De esta manera:"
+                               FontFamily="OverpassLight"
+                               FontSize="13"
+                               HorizontalOptions="Center"
+                               Margin="0, 10, 0, 0"></Label>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--PASO 4: AGREGAR LA Y & SUS EXPONENTES-->
+                <Border x:Name="borderSolutionStep4"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="Transparent"
+                        HorizontalOptions="Fill"
+                        MaximumWidthRequest="600"
+                        Margin="40, 10, 40, 10"
+                        Padding="20"
+                        IsVisible="False">
+                    <VerticalStackLayout x:Name="stackSolutionStep4">
+                        <Label x:Name="flexSolutionStep4Title"
+                               Text="PASO 4"
+                               FontSize="16"
+                               FontFamily="LexendLight"
+                               HorizontalOptions="Center" />
+
+                        <BoxView x:Name="dividerStep4"
+                                 WidthRequest="260"
+                                 HeightRequest="1"
+                                 BackgroundColor="#50FFFFFF"
+                                 Margin="0, 0, 0, 5" />
+
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Opacity="1"
+                                               Margin="0, 10, 0, 0">
+                            <ImageButton x:Name="imgCatStep4"
+                                         Source="cat_normal_w.svg"
+                                         WidthRequest="100"
+                                         HeightRequest="100"
+                                         VerticalOptions="Center"
+                                         Margin="0, 0, -10, 10"></ImageButton>
+
+                            <Label x:Name="lbDialogueStep4"
+                                   Text="—Luego agrega el segundo valor en cada fila y añade los exponentes de manera ascendente. (Recuerda que empiezas con el 0)."
+                                   TextColor="#ffffff"
+                                   FontSize="13"
+                                   FontFamily="OverpassLight"
+                                   LineBreakMode="WordWrap"
+                                   VerticalOptions="Start"
+                                   WidthRequest="400"
+                                   Margin="0, 10, 0, 0"
+                                   Padding="5, 0, 5, 0"></Label>
+                        </HorizontalStackLayout>
+
+                        <Label Text="De esta manera:"
+                               FontFamily="OverpassLight"
+                               FontSize="13"
+                               HorizontalOptions="Center"
+                               Margin="0, 10, 0, 0"></Label>
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!--PASO 5: MOSTRAR RESULTADO-->
+                <Border x:Name="borderSolutionStep5"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="Transparent"
+                        HorizontalOptions="Fill"
+                        MaximumWidthRequest="600"
+                        Margin="40, 10, 40, 10"
+                        Padding="20"
+                        IsVisible="False">
+                    <VerticalStackLayout x:Name="stackSolutionStep5">
+                        <Label x:Name="flexSolutionStep5Title"
+                               Text="PASO 5"
+                               FontSize="16"
+                               FontFamily="LexendLight"
+                               HorizontalOptions="Center" />
+
+                        <BoxView x:Name="dividerStep5"
+                                 WidthRequest="260"
+                                 HeightRequest="1"
+                                 BackgroundColor="#50FFFFFF"
+                                 Margin="0, 0, 0, 5" />
+
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Opacity="1"
+                                               Margin="0, 10, 0, 0">
+                            <ImageButton x:Name="imgCatStep5"
+                                         Source="cat_normal_w.svg"
+                                         WidthRequest="100"
+                                         HeightRequest="100"
+                                         VerticalOptions="Center"
+                                         Margin="0, 0, -10, 10"></ImageButton>
+
+                            <Label x:Name="lbDialogueStep5"
+                                   Text="—Por último, solo pon todos los valores de la tabla en una sola línea. Como el binomio no tenía signo negativo, todos los valores se suman."
+                                   TextColor="#ffffff"
+                                   FontSize="13"
+                                   FontFamily="OverpassLight"
+                                   LineBreakMode="WordWrap"
+                                   VerticalOptions="Start"
+                                   WidthRequest="400"
+                                   Margin="0, 10, 0, 0"
+                                   Padding="5, 0, 5, 0"></Label>
+                        </HorizontalStackLayout>
+
+                        <Label Text="De esta manera:"
+                               FontFamily="OverpassLight"
+                               FontSize="13"
+                               HorizontalOptions="Center"
+                               Margin="0, 10, 0, 0"></Label>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--PASO 6: FELICIDADES-->
+                <Border x:Name="borderSolutionStep6"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="Transparent"
+                        HorizontalOptions="Fill"
+                        MaximumWidthRequest="600"
+                        Margin="40, 10, 40, 40"
+                        Padding="20"
+                        IsVisible="False">
+                    <VerticalStackLayout x:Name="stackSolutionStep6">
+                        <HorizontalStackLayout HorizontalOptions="Center"
+                                               Opacity="1"
+                                               Margin="0, 10, 0, 0">
+                            <ImageButton x:Name="imgCatStep6"
+                                         Source="cat_normal_w.svg"
+                                         WidthRequest="100"
+                                         HeightRequest="100"
+                                         VerticalOptions="Center"
+                                         Margin="0, 0, -10, 10"></ImageButton>
+
+                            <Label x:Name="lbDialogueStep6"
+                                   Text="—Y eso es todo. En esencia, así se desarrolla un binomio elevado a una potencia. Ten en cuenta que el triángulo de pascal no es óptimo para binomios con potencias grandes, así que considera revisar también el tema 'Binomio de Newton'."
+                                   TextColor="#ffffff"
+                                   FontSize="13"
+                                   FontFamily="OverpassLight"
+                                   LineBreakMode="WordWrap"
+                                   VerticalOptions="Start"
+                                   WidthRequest="400"
+                                   Margin="0, 10, 0, 0"
+                                   Padding="5, 0, 5, 0"></Label>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -19,9 +19,9 @@ public partial class PrincipalSubjectListPage : ContentPage
     int profilepic = Preferences.Default.Get("profile_pic", 1);
 
     string ImageButtonCurrentFocus = "welcome",
-        message = "Este contenido aún no está disponible. Ahora mismo son las 2 de la mañana y no he dormido" +
-        " absolutamente nada, he maldecido al creador de MAUI de tantas maneras que estoy empezando a cuestionar " +
-        "mi propia sanidad. Preferí dormir mis merecidas 2 horas que terminar estas páginas. (:";
+        message = "Este contenido aún no está disponible. Llevo varios días sin dormir más de 3 horas, (mi equipo" +
+        " le hace honor a su nombre), y eso sumado con el pobre rendimiento de MAUI, y su increiblemente deficiente documentación" +
+        " creo que estoy empezando a cuestionar mi propia sanidad mental. Mi GitHub no me dejará mentir. (:";
 
 
     //Métodos Miscelanea

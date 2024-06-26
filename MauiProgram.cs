@@ -40,6 +40,9 @@ namespace ProjectMHYST
                     fonts.AddFont("ZillaSlab-SemiBold.ttf", "ZillaSlabSemibold");
                     fonts.AddFont("ZillaSlab-Regular.ttf", "ZillaSlabBlack");
                     fonts.AddFont("ZillaSlab-Medium.ttf", "ZillaSlabMedium");
+
+                    //Latin Modern - Math
+                    fonts.AddFont("LatinModern-MathRegular.otf", "LatinModernMathRegular");
                 });
 
 #if DEBUG

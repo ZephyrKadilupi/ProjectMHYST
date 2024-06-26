@@ -68,6 +68,7 @@
 	  <None Remove="Resources\Fonts\Kalam-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Kalam-Light.ttf" />
 	  <None Remove="Resources\Fonts\Kalam-Regular.ttf" />
+	  <None Remove="Resources\Fonts\latinmodern-math.otf" />
 	  <None Remove="Resources\Fonts\Lexend-Light.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-Medium.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-Regular.ttf" />
